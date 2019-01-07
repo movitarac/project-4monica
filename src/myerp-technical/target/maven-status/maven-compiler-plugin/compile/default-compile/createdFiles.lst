@@ -1,0 +1,4 @@
+com/dummy/myerp/technical/util/spring/NullFactoryBean.class
+com/dummy/myerp/technical/exception/TechnicalException.class
+com/dummy/myerp/technical/exception/FunctionalException.class
+com/dummy/myerp/technical/exception/NotFoundException.class

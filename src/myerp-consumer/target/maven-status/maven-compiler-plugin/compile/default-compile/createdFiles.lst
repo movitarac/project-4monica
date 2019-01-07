@@ -1,0 +1,14 @@
+com/dummy/myerp/consumer/db/AbstractDbConsumer.class
+com/dummy/myerp/consumer/dao/contrat/DaoProxy.class
+com/dummy/myerp/consumer/db/DataSourcesEnum.class
+com/dummy/myerp/consumer/db/helper/ResultSetHelper.class
+com/dummy/myerp/consumer/dao/impl/cache/JournalComptableDaoCache.class
+com/dummy/myerp/consumer/dao/impl/DaoProxyImpl.class
+com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImpl.class
+com/dummy/myerp/consumer/ConsumerHelper.class
+com/dummy/myerp/consumer/dao/impl/db/rowmapper/comptabilite/LigneEcritureComptableRM.class
+com/dummy/myerp/consumer/dao/contrat/ComptabiliteDao.class
+com/dummy/myerp/consumer/dao/impl/db/rowmapper/comptabilite/CompteComptableRM.class
+com/dummy/myerp/consumer/dao/impl/db/rowmapper/comptabilite/EcritureComptableRM.class
+com/dummy/myerp/consumer/dao/impl/db/rowmapper/comptabilite/JournalComptableRM.class
+com/dummy/myerp/consumer/dao/impl/cache/CompteComptableDaoCache.class

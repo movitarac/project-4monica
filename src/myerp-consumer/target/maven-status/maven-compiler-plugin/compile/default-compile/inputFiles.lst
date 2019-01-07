@@ -1,0 +1,14 @@
+/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/contrat/DaoProxy.java
+/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/db/DataSourcesEnum.java
+/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/cache/CompteComptableDaoCache.java
+/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImpl.java
+/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/ConsumerHelper.java
+/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/db/rowmapper/comptabilite/CompteComptableRM.java
+/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/db/AbstractDbConsumer.java
+/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/contrat/ComptabiliteDao.java
+/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/cache/JournalComptableDaoCache.java
+/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/db/rowmapper/comptabilite/EcritureComptableRM.java
+/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/db/rowmapper/comptabilite/LigneEcritureComptableRM.java
+/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/DaoProxyImpl.java
+/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/db/helper/ResultSetHelper.java
+/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/db/rowmapper/comptabilite/JournalComptableRM.java

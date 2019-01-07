@@ -1,0 +1,7 @@
+com/dummy/myerp/model/bean/comptabilite/CompteComptable.class
+com/dummy/myerp/model/bean/comptabilite/EcritureComptable.class
+com/dummy/myerp/model/bean/comptabilite/JournalComptable.class
+com/dummy/myerp/model/validation/constraint/MontantComptable.class
+com/dummy/myerp/model/validation/constraint/MontantComptable$List.class
+com/dummy/myerp/model/bean/comptabilite/LigneEcritureComptable.class
+com/dummy/myerp/model/bean/comptabilite/SequenceEcritureComptable.class
