@@ -99,7 +99,7 @@ public class EcritureComptable {
     public BigDecimal getTotalCredit() {
         BigDecimal vRetour = BigDecimal.ZERO;
         for (LigneEcritureComptable vLigneEcritureComptable : listLigneEcriture) {
-            if (vLigneEcritureComptable.getDebit() != null) {
+            if (vLigneEcritureComptable.getCredit() != null) {
                 vRetour = vRetour.add(vLigneEcritureComptable.getDebit());
             }
         }
@@ -111,7 +111,13 @@ public class EcritureComptable {
      * @return boolean
      */
     public boolean isEquilibree() {
-        boolean vRetour = this.getTotalDebit().equals(getTotalCredit());
+        int dif = this.getTotalDebit().compareTo(getTotalCredit());
+        boolean vRetour;
+        if (dif == 0){
+            vRetour=true;
+        }else {
+            vRetour=false;
+        }
         return vRetour;
     }
 

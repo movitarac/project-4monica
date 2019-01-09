@@ -7,6 +7,8 @@ import javax.validation.ValidatorFactory;
 
 import com.dummy.myerp.business.contrat.BusinessProxy;
 import com.dummy.myerp.consumer.dao.contrat.DaoProxy;
+import com.dummy.myerp.model.bean.comptabilite.SequenceEcritureComptable;
+import org.springframework.transaction.TransactionStatus;
 
 
 /**
@@ -82,5 +84,19 @@ public abstract class AbstractBusinessManager {
         ValidatorFactory vFactory = vConfiguration.buildValidatorFactory();
         Validator vValidator = vFactory.getValidator();
         return vValidator;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void updateSequenceEcritureComptable(SequenceEcritureComptable pSequenceEcriture)  {
+        TransactionStatus vTS = getTransactionManager().beginTransactionMyERP();
+        try {
+            getDaoProxy().getComptabiliteDao().updateSequenceEcritureComptable(pSequenceEcriture);
+            getTransactionManager().commitMyERP(vTS);
+            vTS = null;
+        } finally {
+            getTransactionManager().rollbackMyERP(vTS);
+        }
     }
 }
