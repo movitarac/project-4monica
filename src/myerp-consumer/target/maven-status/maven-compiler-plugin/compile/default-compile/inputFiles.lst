@@ -3,6 +3,7 @@
 /Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/cache/CompteComptableDaoCache.java
 /Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImpl.java
 /Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/ConsumerHelper.java
+/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/db/rowmapper/comptabilite/SequenceEcritureComptableRM.java
 /Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/impl/db/rowmapper/comptabilite/CompteComptableRM.java
 /Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/db/AbstractDbConsumer.java
 /Users/Vita/Documents/OC/p4/project4-monica/src/myerp-consumer/src/main/java/com/dummy/myerp/consumer/dao/contrat/ComptabiliteDao.java

@@ -13,15 +13,6 @@ public class EcritureComptableTest {
     private static EcritureComptable vEcriture;
 
 
-    @BeforeEach
-    public void init(){
-        vEcriture = new EcritureComptable();
-    }
-
-    @AfterEach
-    public void end(){
-        vEcriture = null;
-    }
     private LigneEcritureComptable createLigne(Integer pCompteComptableNumero, String pDebit, String pCredit) {
         BigDecimal vDebit = pDebit == null ? null : new BigDecimal(pDebit);
         BigDecimal vCredit = pCredit == null ? null : new BigDecimal(pCredit);
@@ -31,6 +22,11 @@ public class EcritureComptableTest {
                                                                     vLibelle,
                                                                     vDebit, vCredit);
         return vRetour;
+    }
+
+    @BeforeEach
+    void init(){
+        vEcriture = new EcritureComptable();
     }
 
     @Test
@@ -50,12 +46,12 @@ public class EcritureComptableTest {
         vEcriture.getListLigneEcriture().add(this.createLigne(1, "20", "1"));
         vEcriture.getListLigneEcriture().add(this.createLigne(2, null, "30"));
         vEcriture.getListLigneEcriture().add(this.createLigne(2, "1", "2"));
-        assertTrue(vEcriture.isEquilibree(), vEcriture.toString());
+        assertFalse(vEcriture.isEquilibree(), vEcriture.toString());
     }
 
     @Test
     public void getTotalDebitTest(){
-
+        vEcriture = new EcritureComptable();
         vEcriture.getListLigneEcriture().add(this.createLigne(1, "200.50", null));
         vEcriture.getListLigneEcriture().add(this.createLigne(1, "100.50", "33"));
         vEcriture.getListLigneEcriture().add(this.createLigne(2, null, "301"));
@@ -65,7 +61,7 @@ public class EcritureComptableTest {
 
     @Test
     public void getTotalCreditTest(){
-
+        vEcriture = new EcritureComptable();
         vEcriture.getListLigneEcriture().add(this.createLigne(1, "200.50", null));
         vEcriture.getListLigneEcriture().add(this.createLigne(1, "100.50", "33"));
         vEcriture.getListLigneEcriture().add(this.createLigne(2, null, "301"));

@@ -22,17 +22,17 @@ public class JournalComptableTest {
     @BeforeEach
     void init(){
         vJournal = new JournalComptable();
-        vJournal.setCode("ab1");
+        vJournal.setCode("ab");
         vJournal.setLibelle("house credit");
 
         vJournalList = new ArrayList<>();
         vJournalList.add(vJournal);
-        vJournalList.add(new JournalComptable("ac2","transport"));
+        vJournalList.add(new JournalComptable("ac","transport"));
 
     }
     @Test
     public void getByCodeTest(){
-        assertEquals(JournalComptable.getByCode(vJournalList,"ab1"),vJournal);
+        assertEquals(JournalComptable.getByCode(vJournalList,"ab"),vJournal);
     }
 
 

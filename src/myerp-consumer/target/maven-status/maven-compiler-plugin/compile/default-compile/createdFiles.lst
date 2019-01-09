@@ -5,6 +5,7 @@ com/dummy/myerp/consumer/db/helper/ResultSetHelper.class
 com/dummy/myerp/consumer/dao/impl/cache/JournalComptableDaoCache.class
 com/dummy/myerp/consumer/dao/impl/DaoProxyImpl.class
 com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImpl.class
+com/dummy/myerp/consumer/dao/impl/db/rowmapper/comptabilite/SequenceEcritureComptableRM.class
 com/dummy/myerp/consumer/ConsumerHelper.class
 com/dummy/myerp/consumer/dao/impl/db/rowmapper/comptabilite/LigneEcritureComptableRM.class
 com/dummy/myerp/consumer/dao/contrat/ComptabiliteDao.class
