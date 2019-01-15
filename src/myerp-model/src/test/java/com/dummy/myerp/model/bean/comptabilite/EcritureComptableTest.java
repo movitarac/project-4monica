@@ -29,6 +29,9 @@ public class EcritureComptableTest {
         vEcriture = new EcritureComptable();
     }
 
+    @AfterEach
+    void end() { vEcriture = null;}
+
     @Test
     public void isEquilibreeTest() {
 

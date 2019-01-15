@@ -3,12 +3,13 @@ package com.dummy.myerp.business.impl.manager;
 import java.math.BigDecimal;
 import java.util.Date;
 
-import org.junit.Test;
+
 import com.dummy.myerp.model.bean.comptabilite.CompteComptable;
 import com.dummy.myerp.model.bean.comptabilite.EcritureComptable;
 import com.dummy.myerp.model.bean.comptabilite.JournalComptable;
 import com.dummy.myerp.model.bean.comptabilite.LigneEcritureComptable;
 import com.dummy.myerp.technical.exception.FunctionalException;
+import org.junit.jupiter.api.Test;
 
 
 public class ComptabiliteManagerImplTest {
@@ -32,14 +33,14 @@ public class ComptabiliteManagerImplTest {
         manager.checkEcritureComptableUnit(vEcritureComptable);
     }
 
-    @Test(expected = FunctionalException.class)
+    @Test
     public void checkEcritureComptableUnitViolation() throws Exception {
         EcritureComptable vEcritureComptable;
         vEcritureComptable = new EcritureComptable();
         manager.checkEcritureComptableUnit(vEcritureComptable);
     }
 
-    @Test(expected = FunctionalException.class)
+    @Test
     public void checkEcritureComptableUnitRG2() throws Exception {
         EcritureComptable vEcritureComptable;
         vEcritureComptable = new EcritureComptable();
@@ -55,7 +56,7 @@ public class ComptabiliteManagerImplTest {
         manager.checkEcritureComptableUnit(vEcritureComptable);
     }
 
-    @Test(expected = FunctionalException.class)
+    @Test
     public void checkEcritureComptableUnitRG3() throws Exception {
         EcritureComptable vEcritureComptable;
         vEcritureComptable = new EcritureComptable();

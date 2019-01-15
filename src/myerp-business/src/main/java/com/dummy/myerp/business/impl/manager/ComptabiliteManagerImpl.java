@@ -1,7 +1,10 @@
 package com.dummy.myerp.business.impl.manager;
 
 import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import javax.validation.ConstraintViolation;
@@ -113,7 +116,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
           nSequence.setJournalCode(aTrouverSequenceEcritureComptable.getJournalCode());
           nSequence.setAnnee(aTrouverSequenceEcritureComptable.getAnnee());
           nSequence.setDerniereValeur(numeroSequence);
-
+          this.updateSequenceEcritureComptable(nSequence);
     }
 
     /**
@@ -174,6 +177,31 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
 
         // TODO ===== RG_Compta_5 : Format et contenu de la référence
         // vérifier que l'année dans la référence correspond bien à la date de l'écriture, idem pour le code journal...
+        //exemple : BQ-2016/00001
+
+        String ref = pEcritureComptable.getReference();
+        String codeJournal = pEcritureComptable.getJournal().getCode();
+        String rCodeJournal = ref.substring(0,1);
+
+        if(!codeJournal.equals(rCodeJournal)){
+            throw new FunctionalException(
+                    "Le code journal dans la reference ne correspond pas au code journal de l'ecriture "
+            );
+
+        }
+
+        Date yearEcrit = pEcritureComptable.getDate();
+        String year= ref.substring(2,6);
+        // the string representation of date (month/day/year)
+        DateFormat df = new SimpleDateFormat("yyyy");
+        // Get the date today using Calendar object.
+        String yearRef = df.format(year);
+        if(!yearRef.equals(yearEcrit)){
+            throw new FunctionalException(
+                    "L'annee ecrit la reference ne correspond pas à la date de l'écriture de l'ecriture "
+            );
+        }
+
     }
 
 
