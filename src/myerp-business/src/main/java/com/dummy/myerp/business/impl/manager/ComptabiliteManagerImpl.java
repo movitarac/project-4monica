@@ -63,7 +63,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
     // TODO à tester
     @Override
     public synchronized void addReference(EcritureComptable pEcritureComptable) throws NotFoundException {
-        // TODO à implémenter
+        //Implementation OK
         //RG_COMPTA 5
         // La référence d'une écriture comptable est composée du code du journal dans lequel figure l'écriture suivi de l'année et d'un numéro de séquence (propre à chaque journal) sur 5 chiffres incrémenté automatiquement à chaque écriture. Le formatage de la référence est : XX-AAAA/#####.
         //Ex : Journal de banque (BQ), écriture au 31/12/2016
@@ -99,8 +99,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
             numeroSequence = existSequenceEcritureComptable.getDerniereValeur();
 
         }
-
-                        /*
+                /*
                 3.  Mettre à jour la référence de l'écriture avec la référence calculée (RG_Compta_5)
                 */
          String reference = pEcritureComptable.getJournal().getCode() + "-" + year + "/"
@@ -112,11 +111,11 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
                 4.  Enregistrer (insert/update) la valeur de la séquence en persitance
                     (table sequence_ecriture_comptable)
          */
-          SequenceEcritureComptable nSequence = new SequenceEcritureComptable();
-          nSequence.setJournalCode(aTrouverSequenceEcritureComptable.getJournalCode());
-          nSequence.setAnnee(aTrouverSequenceEcritureComptable.getAnnee());
-          nSequence.setDerniereValeur(numeroSequence);
-          this.updateSequenceEcritureComptable(nSequence);
+          SequenceEcritureComptable newSequence = new SequenceEcritureComptable();
+        newSequence.setJournalCode(aTrouverSequenceEcritureComptable.getJournalCode());
+        newSequence.setAnnee(aTrouverSequenceEcritureComptable.getAnnee());
+        newSequence.setDerniereValeur(numeroSequence);
+          this.updateSequenceEcritureComptable(newSequence);
     }
 
     /**
@@ -137,7 +136,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
      * @param pEcritureComptable -
      * @throws FunctionalException Si l'Ecriture comptable ne respecte pas les règles de gestion
      */
-    // TODO tests à compléter
+    // TODO a tester
     protected void checkEcritureComptableUnit(EcritureComptable pEcritureComptable) throws FunctionalException {
         // ===== Vérification des contraintes unitaires sur les attributs de l'écriture
         Set<ConstraintViolation<EcritureComptable>> vViolations = getConstraintValidator().validate(pEcritureComptable);
@@ -175,15 +174,18 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
                     "L'écriture comptable doit avoir au moins deux lignes : une ligne au débit et une ligne au crédit.");
         }
 
-        // TODO ===== RG_Compta_5 : Format et contenu de la référence
+        //  ===== RG_Compta_5 : Format et contenu de la référence
         // vérifier que l'année dans la référence correspond bien à la date de l'écriture, idem pour le code journal...
         //exemple : BQ-2016/00001
 
         String ref = pEcritureComptable.getReference();
         String codeJournal = pEcritureComptable.getJournal().getCode();
-        String rCodeJournal = ref.substring(0,1);
 
-        if(!codeJournal.equals(rCodeJournal)){
+
+        String codeJournalFromRef = ref.substring(0,1);
+
+
+        if(!codeJournal.equals(codeJournalFromRef)){
             throw new FunctionalException(
                     "Le code journal dans la reference ne correspond pas au code journal de l'ecriture "
             );

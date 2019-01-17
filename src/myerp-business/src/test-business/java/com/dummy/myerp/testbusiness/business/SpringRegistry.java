@@ -23,7 +23,7 @@ public final class SpringRegistry {
 
     /** Nom des fichiers de contexte de l'application */
     private static final String CONTEXT_APPLI_LOCATION
-        = "classpath:/com/dummy/myerp/testbusiness/business/bootstrapContext.xml";
+        = "classpath:/bootstrapContext.xml";
 
     /** Le context spring de l'application */
     private ApplicationContext contextAppli;
@@ -81,7 +81,7 @@ public final class SpringRegistry {
      * @return {@link BusinessProxy}
      */
     public static BusinessProxy getBusinessProxy() {
-        return (BusinessProxy) SpringRegistry.getBean("BusinessProxy");
+        return (BusinessProxy) SpringRegistry.getBean("businessProxy");
     }
 
 
@@ -91,6 +91,6 @@ public final class SpringRegistry {
      * @return {@link TransactionManager}
      */
     public static TransactionManager getTransactionManager() {
-        return (TransactionManager) SpringRegistry.getBean("TransactionManager");
+        return (TransactionManager) SpringRegistry.getBean("transactionManager");
     }
 }

@@ -8,7 +8,7 @@
 
 
     <!-- ========== ComptabiliteDaoImpl ========== -->
-    <bean id="ComptabiliteDaoImpl" class="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImpl"
+    <bean id="comptabiliteDaoImpl" class="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImpl"
           factory-method="getInstance">
         <property name="SQLgetListCompteComptable">
             <value>

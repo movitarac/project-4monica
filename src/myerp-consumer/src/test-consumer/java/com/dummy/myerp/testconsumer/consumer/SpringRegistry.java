@@ -23,7 +23,7 @@ public final class SpringRegistry {
 
     /** Nom des fichiers de contexte de l'application */
     private static final String CONTEXT_APPLI_LOCATION
-        = "classpath:/com/dummy/myerp/testbusiness/business/bootstrapContext.xml";
+        = "classpath:/dataSourceContext.xml";
 
     /** Le context spring de l'application */
     private ApplicationContext contextAppli;
@@ -81,7 +81,7 @@ public final class SpringRegistry {
      * @return {@link DaoProxy}
      */
     public static DaoProxy getDaoProxy() {
-        return (DaoProxy) SpringRegistry.getBean("DaoProxy");
+        return (DaoProxy) SpringRegistry.getBean("daoProxy");
     }
 
 

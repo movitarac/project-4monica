@@ -1,4 +1,4 @@
 com/dummy/myerp/testconsumer/consumer/ConsumerTestCase.class
 com/dummy/myerp/testconsumer/consumer/SpringRegistry.class
-java/com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImplTest.class
 com/dummy/myerp/testconsumer/consumer/TestInitSpring.class
+com/dummy/myerp/consumer/dao/impl/db/dao/ComptabiliteDaoImplTest.class
