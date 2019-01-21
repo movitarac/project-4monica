@@ -54,7 +54,6 @@ public class EcritureComptableTest {
 
     @Test
     public void getTotalDebitTest(){
-        vEcriture = new EcritureComptable();
         vEcriture.getListLigneEcriture().add(this.createLigne(1, "200.50", null));
         vEcriture.getListLigneEcriture().add(this.createLigne(1, "100.50", "33"));
         vEcriture.getListLigneEcriture().add(this.createLigne(2, null, "301"));
@@ -63,8 +62,7 @@ public class EcritureComptableTest {
     }
 
     @Test
-    public void getTotalCreditTest(){
-        vEcriture = new EcritureComptable();
+    public void getTotalCreditTest(){ ;
         vEcriture.getListLigneEcriture().add(this.createLigne(1, "200.50", null));
         vEcriture.getListLigneEcriture().add(this.createLigne(1, "100.50", "33"));
         vEcriture.getListLigneEcriture().add(this.createLigne(2, null, "301"));

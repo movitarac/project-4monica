@@ -12,7 +12,7 @@
     <import resource="classpath:/com/dummy/myerp/business/applicationContext.xml"/>
 
     <!-- ==================== Consumer Context ==================== -->
-    <!--<import resource="classpath:/com/dummy/myerp/consumer/applicationContext.xml"/>-->
+    <import resource="classpath:/com/dummy/myerp/consumer/applicationContext.xml"/>
 
     <!-- ==================== Datasource ==================== -->
     <bean id="dataSourceMYERP" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
