@@ -25,6 +25,7 @@ public final class SpringRegistry {
     private static final String CONTEXT_APPLI_LOCATION
         = "classpath:/bootstrapContext.xml";
 
+
     /** Le context spring de l'application */
     private ApplicationContext contextAppli;
 

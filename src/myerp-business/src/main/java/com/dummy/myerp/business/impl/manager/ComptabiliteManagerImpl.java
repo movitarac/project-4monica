@@ -96,7 +96,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         if (existSequenceEcritureComptable == null) {
             numeroSequence = 1;
         } else {
-            numeroSequence = existSequenceEcritureComptable.getDerniereValeur();
+            numeroSequence = existSequenceEcritureComptable.getDerniereValeur()+1;
 
         }
                 /*
@@ -178,25 +178,20 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         // vérifier que l'année dans la référence correspond bien à la date de l'écriture, idem pour le code journal...
         //exemple : BQ-2016/00001
 
-        String ref = pEcritureComptable.getReference();
-        String codeJournal = pEcritureComptable.getJournal().getCode();
-        String codeJournalFromRef = ref.substring(0,2);
+        //annee
 
-
-        if(!codeJournal.equals(codeJournalFromRef)){
+        if(!pEcritureComptable.getJournal().getCode().equals(pEcritureComptable.getReference().substring(0,2))){
             throw new FunctionalException(
                     "Le code journal dans la reference ne correspond pas au code journal de l'ecriture "
             );
 
         }
 
-        Date yearEcrit = pEcritureComptable.getDate();
-        String year= ref.substring(3,7);
         // the string representation of date (month/day/year)
         DateFormat df = new SimpleDateFormat("yyyy");
         // Get the date today using Calendar object.
-        String yearRef = df.format(year);
-        if(!yearRef.equals(yearEcrit)){
+        String yearRef = df.format(pEcritureComptable.getReference().substring(0,2));
+        if(!yearRef.equals(pEcritureComptable.getDate())){
             throw new FunctionalException(
                     "L'annee ecrit la reference ne correspond pas à la date de l'écriture de l'ecriture "
             );

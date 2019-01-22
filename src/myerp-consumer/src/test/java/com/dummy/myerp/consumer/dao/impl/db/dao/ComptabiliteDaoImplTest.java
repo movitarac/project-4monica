@@ -82,17 +82,20 @@ class ComptabiliteDaoImplTest extends ConsumerTestCase {
       vEcriture.setLibelle("Paiement Facture ABC123");
       vEcriture.setJournal(journalComptable);
       vEcriture.setDate(vDate);
+      vEcriture.setId(-6);
+      vEcriture.setReference("BQ-2019/00006");
       SimpleDateFormat formatDate = new SimpleDateFormat();
       String year = formatDate.format(vEcriture.getDate());
 
       dao.insertEcritureComptable(vEcriture);
+      dao.deleteEcritureComptable(vEcriture.getId());
     }
 
     @Test
     void updateEcritureComptable() {
         try {
             vEcriture = dao.getEcritureComptable(-2);
-            vEcriture.setLibelle("test update");
+            vEcriture.setLibelle("libelle update from java test class");
         } catch (NotFoundException e) {
             e.printStackTrace();
         }
@@ -113,7 +116,6 @@ class ComptabiliteDaoImplTest extends ConsumerTestCase {
         SequenceEcritureComptable toBeFoundSequence = new SequenceEcritureComptable();
         toBeFoundSequence.setJournalCode("VE");
         toBeFoundSequence.setAnnee(2016);
-        toBeFoundSequence.setDerniereValeur(43);
 
        SequenceEcritureComptable realSequence = dao.getSequenceEcritureComptable(toBeFoundSequence.getJournalCode(),toBeFoundSequence.getAnnee());
       assertNotNull(realSequence);

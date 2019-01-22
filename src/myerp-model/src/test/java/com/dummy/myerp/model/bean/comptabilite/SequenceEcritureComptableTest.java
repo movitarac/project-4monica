@@ -16,4 +16,5 @@ class SequenceEcritureComptableTest {
         String realToString="SequenceEcritureComptable{annee=2019, derniereValeur=59}";
         assertEquals(vSequence.toString(),realToString);
     }
+
 }

@@ -13,14 +13,13 @@ class LigneEcritureComptableTest {
 
     @Test
     public void toStringTest() {
-        SequenceEcritureComptable vSequence = new SequenceEcritureComptable();
 
         LigneEcritureComptable vLigne = new LigneEcritureComptable();
         vLigne.setCredit(BigDecimal.valueOf(50));
         vLigne.setDebit(null);
         vLigne.setCompteComptable(null);
         vLigne.setLibelle("banque");
-        String realToString="{LigneEcritureComptable{compteComptable=null, libelle='banque', debit=null, credit=50}";
+        String realToString="LigneEcritureComptable{compteComptable=null, libelle='banque', debit=null, credit=50}";
         assertEquals(vLigne.toString(),realToString);
     }
 }

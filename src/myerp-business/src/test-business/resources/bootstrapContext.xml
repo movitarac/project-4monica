@@ -8,17 +8,13 @@
                            http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-    <!-- ==================== Business Context ==================== -->
-    <import resource="classpath:/com/dummy/myerp/business/applicationContext.xml"/>
-
     <!-- ==================== Consumer Context ==================== -->
     <import resource="classpath:/com/dummy/myerp/consumer/applicationContext.xml"/>
 
-    <!-- ==================== Datasource ==================== -->
-    <bean id="dataSourceMYERP" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="org.postgresql.Driver"/>
-        <property name="url" value="jdbc:postgresql://127.0.0.1:9032/db_myerp"/>
-        <property name="username" value="usr_myerp"/>
-        <property name="password" value="myerp"/>
-    </bean>
+    <!-- ==================== Business Context ==================== -->
+    <import resource="classpath:/com/dummy/myerp/business/applicationContext.xml"/>
+
+    <!-- ==================== Data Source Context ==================== -->
+    <import resource="classpath:/com/dummy/myerp/consumer/dataSourceContext.xml"/>
+
 </beans>
