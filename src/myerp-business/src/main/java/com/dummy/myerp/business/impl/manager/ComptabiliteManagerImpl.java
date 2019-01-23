@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 import javax.validation.ConstraintViolation;
@@ -190,8 +189,8 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         // the string representation of date (month/day/year)
         DateFormat df = new SimpleDateFormat("yyyy");
         // Get the date today using Calendar object.
-        String yearRef = df.format(pEcritureComptable.getReference().substring(0,2));
-        if(!yearRef.equals(pEcritureComptable.getDate())){
+        String yearRef = df.format(pEcritureComptable.getDate());
+        if(!yearRef.equals(pEcritureComptable.getReference().substring(3,7))){
             throw new FunctionalException(
                     "L'annee ecrit la reference ne correspond pas à la date de l'écriture de l'ecriture "
             );

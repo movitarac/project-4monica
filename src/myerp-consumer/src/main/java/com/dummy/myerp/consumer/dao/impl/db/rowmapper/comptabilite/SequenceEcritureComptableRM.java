@@ -1,6 +1,6 @@
 package com.dummy.myerp.consumer.dao.impl.db.rowmapper.comptabilite;
 
-import com.dummy.myerp.model.bean.comptabilite.JournalComptable;
+
 import com.dummy.myerp.model.bean.comptabilite.SequenceEcritureComptable;
 import org.springframework.jdbc.core.RowMapper;
 

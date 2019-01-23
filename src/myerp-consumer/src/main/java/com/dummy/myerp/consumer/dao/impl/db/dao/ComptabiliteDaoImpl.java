@@ -86,58 +86,58 @@ public class ComptabiliteDaoImpl extends AbstractDbConsumer implements Comptabil
 
     // ==================== Setter ====================
     public void setSQLgetListCompteComptable(String pSQLgetListCompteComptable) {
-        SQLgetListCompteComptable = pSQLgetListCompteComptable;
+        this.SQLgetListCompteComptable = pSQLgetListCompteComptable;
     }
     public void setSQLgetListJournalComptable(String pSQLgetListJournalComptable) {
-        SQLgetListJournalComptable = pSQLgetListJournalComptable;
+        this.SQLgetListJournalComptable = pSQLgetListJournalComptable;
     }
 
     public void setSQLgetListEcritureComptable(String pSQLgetListEcritureComptable) {
-        SQLgetListEcritureComptable = pSQLgetListEcritureComptable;
+        this.SQLgetListEcritureComptable = pSQLgetListEcritureComptable;
     }
 
     public void setSQLgetEcritureComptable(String pSQLgetEcritureComptable) {
-        SQLgetEcritureComptable = pSQLgetEcritureComptable;
+        this.SQLgetEcritureComptable = pSQLgetEcritureComptable;
     }
 
     public void setSQLgetEcritureComptableByRef(String pSQLgetEcritureComptableByRef) {
-        SQLgetEcritureComptableByRef = pSQLgetEcritureComptableByRef;
+        this.SQLgetEcritureComptableByRef = pSQLgetEcritureComptableByRef;
     }
 
     public void setSQLloadListLigneEcriture(String pSQLloadListLigneEcriture) {
-        SQLloadListLigneEcriture = pSQLloadListLigneEcriture;
+        this.SQLloadListLigneEcriture = pSQLloadListLigneEcriture;
     }
 
     public void setSQLinsertEcritureComptable(String pSQLinsertEcritureComptable) {
-        SQLinsertEcritureComptable = pSQLinsertEcritureComptable;
+        this.SQLinsertEcritureComptable = pSQLinsertEcritureComptable;
     }
 
     public void setSQLinsertListLigneEcritureComptable(String pSQLinsertListLigneEcritureComptable) {
-        SQLinsertListLigneEcritureComptable = pSQLinsertListLigneEcritureComptable;
+        this.SQLinsertListLigneEcritureComptable = pSQLinsertListLigneEcritureComptable;
     }
 
     public void setSQLupdateEcritureComptable(String pSQLupdateEcritureComptable) {
-        SQLupdateEcritureComptable = pSQLupdateEcritureComptable;
+        this.SQLupdateEcritureComptable = pSQLupdateEcritureComptable;
     }
 
     public void setSQLdeleteEcritureComptable(String pSQLdeleteEcritureComptable) {
-        SQLdeleteEcritureComptable = pSQLdeleteEcritureComptable;
+        this.SQLdeleteEcritureComptable = pSQLdeleteEcritureComptable;
     }
 
     public void setSQLdeleteListLigneEcritureComptable(String pSQLdeleteListLigneEcritureComptable) {
-        SQLdeleteListLigneEcritureComptable = pSQLdeleteListLigneEcritureComptable;
+        this.SQLdeleteListLigneEcritureComptable = pSQLdeleteListLigneEcritureComptable;
     }
 
     public void setSQLgetSequenceEcritureComptable(String pSQLgetSequenceEcritureComptable) {
-        SQLgetSequenceEcritureComptable = pSQLgetSequenceEcritureComptable;
+        this.SQLgetSequenceEcritureComptable = pSQLgetSequenceEcritureComptable;
     }
 
     public void setSQLupdateSequenceEcritureComptable(String pSQLupdateSequenceEcritureComptable) {
-        SQLupdateSequenceEcritureComptable = pSQLupdateSequenceEcritureComptable;
+        this.SQLupdateSequenceEcritureComptable = pSQLupdateSequenceEcritureComptable;
     }
 
     public void setSQLinsertSequenceEcritureComptable(String sqLinsertSequenceEcritureComptable) {
-        SQLinsertSequenceEcritureComptable = sqLinsertSequenceEcritureComptable;
+        this.SQLinsertSequenceEcritureComptable = sqLinsertSequenceEcritureComptable;
     }
 
     // ==================== Méthodes ====================
@@ -164,7 +164,7 @@ public class ComptabiliteDaoImpl extends AbstractDbConsumer implements Comptabil
     public List<EcritureComptable> getListEcritureComptable() {
         JdbcTemplate vJdbcTemplate = new JdbcTemplate(this.getDataSource(DataSourcesEnum.MYERP));
         EcritureComptableRM vRM = new EcritureComptableRM();
-        List<EcritureComptable> vList = vJdbcTemplate.query(SQLgetListEcritureComptable, vRM);
+         List<EcritureComptable> vList = vJdbcTemplate.query(SQLgetListEcritureComptable, vRM);
         return vList;
     }
 
