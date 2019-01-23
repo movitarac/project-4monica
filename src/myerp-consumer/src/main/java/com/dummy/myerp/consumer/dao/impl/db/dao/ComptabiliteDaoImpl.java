@@ -85,59 +85,59 @@ public class ComptabiliteDaoImpl extends AbstractDbConsumer implements Comptabil
 
 
     // ==================== Setter ====================
-    public void setSQLgetListCompteComptable(String pSQLgetListCompteComptable) {
-        this.SQLgetListCompteComptable = pSQLgetListCompteComptable;
+    public void setSQLgetListCompteComptable(final String pSQLgetListCompteComptable) {
+        SQLgetListCompteComptable = pSQLgetListCompteComptable;
     }
-    public void setSQLgetListJournalComptable(String pSQLgetListJournalComptable) {
-        this.SQLgetListJournalComptable = pSQLgetListJournalComptable;
-    }
-
-    public void setSQLgetListEcritureComptable(String pSQLgetListEcritureComptable) {
-        this.SQLgetListEcritureComptable = pSQLgetListEcritureComptable;
+    public void setSQLgetListJournalComptable(final String pSQLgetListJournalComptable) {
+        SQLgetListJournalComptable = pSQLgetListJournalComptable;
     }
 
-    public void setSQLgetEcritureComptable(String pSQLgetEcritureComptable) {
-        this.SQLgetEcritureComptable = pSQLgetEcritureComptable;
+    public void setSQLgetListEcritureComptable(final String pSQLgetListEcritureComptable) {
+        SQLgetListEcritureComptable = pSQLgetListEcritureComptable;
     }
 
-    public void setSQLgetEcritureComptableByRef(String pSQLgetEcritureComptableByRef) {
-        this.SQLgetEcritureComptableByRef = pSQLgetEcritureComptableByRef;
+    public void setSQLgetEcritureComptable(final String pSQLgetEcritureComptable) {
+        SQLgetEcritureComptable = pSQLgetEcritureComptable;
     }
 
-    public void setSQLloadListLigneEcriture(String pSQLloadListLigneEcriture) {
-        this.SQLloadListLigneEcriture = pSQLloadListLigneEcriture;
+    public void setSQLgetEcritureComptableByRef(final String pSQLgetEcritureComptableByRef) {
+        SQLgetEcritureComptableByRef = pSQLgetEcritureComptableByRef;
     }
 
-    public void setSQLinsertEcritureComptable(String pSQLinsertEcritureComptable) {
-        this.SQLinsertEcritureComptable = pSQLinsertEcritureComptable;
+    public void setSQLloadListLigneEcriture(final String pSQLloadListLigneEcriture) {
+        SQLloadListLigneEcriture = pSQLloadListLigneEcriture;
     }
 
-    public void setSQLinsertListLigneEcritureComptable(String pSQLinsertListLigneEcritureComptable) {
-        this.SQLinsertListLigneEcritureComptable = pSQLinsertListLigneEcritureComptable;
+    public void setSQLinsertEcritureComptable(final String pSQLinsertEcritureComptable) {
+        SQLinsertEcritureComptable = pSQLinsertEcritureComptable;
     }
 
-    public void setSQLupdateEcritureComptable(String pSQLupdateEcritureComptable) {
-        this.SQLupdateEcritureComptable = pSQLupdateEcritureComptable;
+    public void setSQLinsertListLigneEcritureComptable(final String pSQLinsertListLigneEcritureComptable) {
+        SQLinsertListLigneEcritureComptable = pSQLinsertListLigneEcritureComptable;
     }
 
-    public void setSQLdeleteEcritureComptable(String pSQLdeleteEcritureComptable) {
-        this.SQLdeleteEcritureComptable = pSQLdeleteEcritureComptable;
+    public void setSQLupdateEcritureComptable(final String pSQLupdateEcritureComptable) {
+        SQLupdateEcritureComptable = pSQLupdateEcritureComptable;
     }
 
-    public void setSQLdeleteListLigneEcritureComptable(String pSQLdeleteListLigneEcritureComptable) {
-        this.SQLdeleteListLigneEcritureComptable = pSQLdeleteListLigneEcritureComptable;
+    public void setSQLdeleteEcritureComptable(final String pSQLdeleteEcritureComptable) {
+        SQLdeleteEcritureComptable = pSQLdeleteEcritureComptable;
     }
 
-    public void setSQLgetSequenceEcritureComptable(String pSQLgetSequenceEcritureComptable) {
-        this.SQLgetSequenceEcritureComptable = pSQLgetSequenceEcritureComptable;
+    public void setSQLdeleteListLigneEcritureComptable(final String pSQLdeleteListLigneEcritureComptable) {
+        SQLdeleteListLigneEcritureComptable = pSQLdeleteListLigneEcritureComptable;
     }
 
-    public void setSQLupdateSequenceEcritureComptable(String pSQLupdateSequenceEcritureComptable) {
-        this.SQLupdateSequenceEcritureComptable = pSQLupdateSequenceEcritureComptable;
+    public void setSQLgetSequenceEcritureComptable(final String pSQLgetSequenceEcritureComptable) {
+        SQLgetSequenceEcritureComptable = pSQLgetSequenceEcritureComptable;
     }
 
-    public void setSQLinsertSequenceEcritureComptable(String sqLinsertSequenceEcritureComptable) {
-        this.SQLinsertSequenceEcritureComptable = sqLinsertSequenceEcritureComptable;
+    public void setSQLupdateSequenceEcritureComptable(final String pSQLupdateSequenceEcritureComptable) {
+        SQLupdateSequenceEcritureComptable = pSQLupdateSequenceEcritureComptable;
+    }
+
+    public void setSQLinsertSequenceEcritureComptable(final String sqLinsertSequenceEcritureComptable) {
+        SQLinsertSequenceEcritureComptable = sqLinsertSequenceEcritureComptable;
     }
 
     // ==================== Méthodes ====================
