@@ -2,7 +2,7 @@ package com.dummy.myerp.business.impl.manager;
 
 import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
-import java.util.ArrayList;
+
 import java.util.Date;
 import java.util.List;
 
@@ -12,11 +12,11 @@ import com.dummy.myerp.technical.exception.FunctionalException;
 import com.dummy.myerp.technical.exception.NotFoundException;
 import com.dummy.myerp.testbusiness.business.BusinessTestCase;
 
-import com.sun.tools.corba.se.idl.constExpr.Not;
+
 import org.junit.jupiter.api.Test;
 
 
-import static com.dummy.myerp.consumer.ConsumerHelper.getDaoProxy;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 

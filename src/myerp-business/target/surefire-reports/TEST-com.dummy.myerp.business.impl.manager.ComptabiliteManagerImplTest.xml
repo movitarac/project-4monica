@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="4.891" tests="11" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="3.906" tests="11" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2018.3.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -62,15 +62,15 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="deleteEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.506"/>
-  <testcase name="checkEcritureComptableContextTestRG6" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.289"/>
-  <testcase name="insertEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.466"/>
-  <testcase name="checkEcritureComptableUnitViolationTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.009"/>
-  <testcase name="checkEcritureComptableUnitRG2" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.01"/>
-  <testcase name="checkEcritureComptableUnitRG3" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.015"/>
-  <testcase name="checkEcritureComptableUnitRG5" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.051"/>
-  <testcase name="checkEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.019"/>
-  <testcase name="checkEcritureComptableUnit" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.029"/>
-  <testcase name="updateEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.365"/>
-  <testcase name="addReferenceTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.085"/>
+  <testcase name="deleteEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.469"/>
+  <testcase name="checkEcritureComptableContextTestRG6" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.194"/>
+  <testcase name="insertEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.337"/>
+  <testcase name="checkEcritureComptableUnitViolationTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.025"/>
+  <testcase name="checkEcritureComptableUnitRG2" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.025"/>
+  <testcase name="checkEcritureComptableUnitRG3" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.036"/>
+  <testcase name="checkEcritureComptableUnitRG5" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.157"/>
+  <testcase name="checkEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.018"/>
+  <testcase name="checkEcritureComptableUnit" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.021"/>
+  <testcase name="updateEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.33"/>
+  <testcase name="addReferenceTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.022"/>
 </testsuite>
