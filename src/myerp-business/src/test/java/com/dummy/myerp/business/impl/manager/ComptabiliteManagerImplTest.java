@@ -212,9 +212,8 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
 
     @Test
     public void updateEcritureComptableTest() throws Exception {
-        assertThrows(FunctionalException.class,
-                () -> {
-                   /* try {*/
+
+                    try {
 
                         List<EcritureComptable> vListeEcritureComptable = manager.getListEcritureComptable();
                         for (EcritureComptable vEcritureComptable : vListeEcritureComptable) {
@@ -223,10 +222,10 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
                                 manager.updateEcritureComptable(vEcritureComptable);
                             }
                         }
-                    /*} catch (Exception e) {
+                    } catch (Exception e) {
                         fail("Error during updating");
-                    }*/
-                });
+                    }
+
     }
 
     @Test
