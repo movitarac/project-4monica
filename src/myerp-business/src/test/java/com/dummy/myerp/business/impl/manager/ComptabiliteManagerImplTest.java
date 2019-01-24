@@ -16,7 +16,6 @@ import com.dummy.myerp.testbusiness.business.BusinessTestCase;
 import org.junit.jupiter.api.Test;
 
 
-
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -71,19 +70,19 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
 
         assertThrows(FunctionalException.class,
                 () -> {
-        vEcritureComptable.setJournal(new JournalComptable("BQ", "Banque"));
-        SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-        vEcritureComptable.setDate(dateformat.parse("2016-12-27 10:00:00"));
-        vEcritureComptable.setId(-5);
-        vEcritureComptable.setLibelle("Paiement Facture C110002");
-        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
-                null, new BigDecimal(3000),
-                null));
-        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(2),
-                null, null,
-                new BigDecimal(3000)));
+                    vEcritureComptable.setJournal(new JournalComptable("BQ", "Banque"));
+                    SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                    vEcritureComptable.setDate(dateformat.parse("2016-12-27 10:00:00"));
+                    vEcritureComptable.setId(-5);
+                    vEcritureComptable.setLibelle("Paiement Facture C110002");
+                    vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
+                            null, new BigDecimal(3000),
+                            null));
+                    vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(2),
+                            null, null,
+                            new BigDecimal(3000)));
                     vEcritureComptable.setReference("BQ-2016/00003");
-        manager.checkEcritureComptable(vEcritureComptable);
+                    manager.checkEcritureComptable(vEcritureComptable);
                 });
 
     }
@@ -206,30 +205,40 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
                     manager.insertEcritureComptable(vEcritureComptable);
 
 
-
-
                 });
 
     }
 
 
-
     @Test
     public void updateEcritureComptableTest() throws Exception {
-        try {
+        assertThrows(FunctionalException.class,
+                () -> {
+                   /* try {*/
 
+                        List<EcritureComptable> vListeEcritureComptable = manager.getListEcritureComptable();
+                        for (EcritureComptable vEcritureComptable : vListeEcritureComptable) {
+                            if (vEcritureComptable.getId() == -5) {
+                                vEcritureComptable.setLibelle("test for update");
+                                manager.updateEcritureComptable(vEcritureComptable);
+                            }
+                        }
+                    /*} catch (Exception e) {
+                        fail("Error during updating");
+                    }*/
+                });
+    }
 
-            List<EcritureComptable> vListeEcritureComptable = manager.getListEcritureComptable();
-            for(EcritureComptable vEcritureComptable : vListeEcritureComptable) {
-                if(vEcritureComptable.getId()==-5) {
-                    vEcritureComptable.setLibelle("test for update");
-                    manager.updateEcritureComptable(vEcritureComptable);
-                }
-            }
-        }catch(Exception e) {
-            fail("Error during updating");
-        }
+    @Test
+    public void getListJournalComptableTest() {
+        List<JournalComptable> vList = manager.getListJournalComptable();
+        assertTrue(vList.size()>1);
+    }
+    @Test
 
+    public void getListCompteComptableTest() {
+        List<CompteComptable> vList = manager.getListCompteComptable();
+        assertTrue(vList.size()>1);
     }
 
 
