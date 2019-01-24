@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+                          ">
+
+    <!-- ==================== Consumer Context ==================== -->
+    <!-- DaoProxy -->
+    <bean id="daoProxy" class="com.dummy.myerp.consumer.dao.impl.DaoProxyImpl" factory-method="getInstance"/>
+
+    <!-- ==================== Business Context ==================== -->
+    <import resource="classpath:/com/dummy/myerp/business/applicationContext.xml"/>
+
+    <!-- ==================== Data Source Context ==================== -->
+    <bean id="dataSourceMYERP" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="org.postgresql.Driver"/>
+        <property name="url" value="jdbc:postgresql://127.0.0.1:9032/db_myerp"/>
+        <property name="username" value="usr_myerp"/>
+        <property name="password" value="myerp"/>
+    </bean>
+
+
+</beans>
