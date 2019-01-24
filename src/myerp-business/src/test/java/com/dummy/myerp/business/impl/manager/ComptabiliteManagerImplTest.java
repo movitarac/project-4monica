@@ -7,10 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 
-import com.dummy.myerp.model.bean.comptabilite.CompteComptable;
-import com.dummy.myerp.model.bean.comptabilite.EcritureComptable;
-import com.dummy.myerp.model.bean.comptabilite.JournalComptable;
-import com.dummy.myerp.model.bean.comptabilite.LigneEcritureComptable;
+import com.dummy.myerp.model.bean.comptabilite.*;
 import com.dummy.myerp.technical.exception.FunctionalException;
 import com.dummy.myerp.technical.exception.NotFoundException;
 import com.dummy.myerp.testbusiness.business.BusinessTestCase;
@@ -33,6 +30,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
     @Test
     public void addReferenceTest() throws Exception {
 
+        /*
         vEcritureComptable.setJournal(new JournalComptable("BQ", "Banque"));
         SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         vEcritureComptable.setDate(dateformat.parse("2016-12-27 10:00:00"));
@@ -48,8 +46,22 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         manager.addReference(vEcritureComptable);
         assertNotNull(vEcritureComptable);
         assertEquals("BQ-2016/00052", vEcritureComptable.getReference());
+*/
 
-
+        EcritureComptable vEcritureComptable = new EcritureComptable();
+        vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
+        vEcritureComptable.setDate(new Date());
+        vEcritureComptable.setLibelle("Libelle");
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(401),
+                null, new BigDecimal(123),
+                null));
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(512),
+                null, null,
+                new BigDecimal(123)));
+        assertThrows(NotFoundException.class,
+                () -> {
+                    manager.addReference(vEcritureComptable);
+                });
     }
 
 
