@@ -141,4 +141,16 @@ class ComptabiliteDaoImplTest extends ConsumerTestCase {
         sequenceEcritureComptable.setJournalCode("BQ");
         dao.updateSequenceEcritureComptable(sequenceEcritureComptable);
     }
+
+    @Test
+    void insertSequenceEcritureComptableTest() throws NotFoundException {
+        SequenceEcritureComptable seq = new SequenceEcritureComptable();
+        seq.setDerniereValeur(53);
+        seq.setAnnee(2019);
+        dao.insertSequenceEcritureComptable(seq, "AC");
+        SequenceEcritureComptable seqBis = dao.getSequenceEcritureComptable("AC", 2019);
+        assertEquals(53, (int) seqBis.getDerniereValeur());
+
+
+    }
 }
