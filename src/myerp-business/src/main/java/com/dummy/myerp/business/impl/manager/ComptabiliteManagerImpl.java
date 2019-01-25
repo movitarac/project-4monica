@@ -101,20 +101,37 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
                 /*
                 3.  Mettre à jour la référence de l'écriture avec la référence calculée (RG_Compta_5)
                 */
-         String reference = pEcritureComptable.getJournal().getCode() + "-" + year + "/"
-         + String.format("%05d",numeroSequence);
 
-         pEcritureComptable.setReference(reference);
-                        /*
+        String reference = pEcritureComptable.getJournal().getCode() + "-" + year + "/"
+                + String.format("%05d",numeroSequence);
+        pEcritureComptable.setReference(reference);
+
+        //new sequence
+        SequenceEcritureComptable newSequence = new SequenceEcritureComptable();
+        newSequence.setJournalCode(aTrouverSequenceEcritureComptable.getJournalCode());
+        newSequence.setAnnee(aTrouverSequenceEcritureComptable.getAnnee());
+        newSequence.setDerniereValeur(numeroSequence);
+
+         /*
 
                 4.  Enregistrer (insert/update) la valeur de la séquence en persitance
                     (table sequence_ecriture_comptable)
          */
-          SequenceEcritureComptable newSequence = new SequenceEcritureComptable();
-        newSequence.setJournalCode(aTrouverSequenceEcritureComptable.getJournalCode());
-        newSequence.setAnnee(aTrouverSequenceEcritureComptable.getAnnee());
-        newSequence.setDerniereValeur(numeroSequence);
-          this.updateSequenceEcritureComptable(newSequence);
+        TransactionStatus transactionStatus = getTransactionManager().beginTransactionMyERP();
+        try {
+            getDaoProxy().getComptabiliteDao().updateEcritureComptable(pEcritureComptable);
+            if(numeroSequence == 1) {
+
+                getDaoProxy().getComptabiliteDao().insertSequenceEcritureComptable(newSequence,aTrouverSequenceEcritureComptable.getJournalCode());
+            }else{
+                getDaoProxy().getComptabiliteDao().updateSequenceEcritureComptable(newSequence);
+            }
+            getTransactionManager().commitMyERP(transactionStatus);
+            transactionStatus = null;
+        }finally {
+            getTransactionManager().rollbackMyERP(transactionStatus);
+        }
+
     }
 
     /**
@@ -188,7 +205,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
 
         // the string representation of date (month/day/year)
         DateFormat df = new SimpleDateFormat("yyyy");
-        // Get the date today using Calendar object.
+        // Get the year today using dateformat object.
         String yearRef = df.format(pEcritureComptable.getDate());
         if(!yearRef.equals(pEcritureComptable.getReference().substring(3,7))){
             throw new FunctionalException(
@@ -248,7 +265,6 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
      */
     @Override
     public void updateEcritureComptable(EcritureComptable pEcritureComptable) throws FunctionalException {
-       // this.checkEcritureComptable(pEcritureComptable);
         TransactionStatus vTS = getTransactionManager().beginTransactionMyERP();
         try {
             getDaoProxy().getComptabiliteDao().updateEcritureComptable(pEcritureComptable);

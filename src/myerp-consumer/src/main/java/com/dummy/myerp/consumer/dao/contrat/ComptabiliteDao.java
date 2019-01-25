@@ -97,4 +97,10 @@ public interface ComptabiliteDao {
      */
     void updateSequenceEcritureComptable(SequenceEcritureComptable pSequenceEcritureComptable);
 
+    /**
+     * Insert une nouvelle écriture comptable.
+     *
+     * @param pSequenceEcritureComptable -
+     */
+    void insertSequenceEcritureComptable(SequenceEcritureComptable pSequenceEcritureComptable, String journalcode);
 }

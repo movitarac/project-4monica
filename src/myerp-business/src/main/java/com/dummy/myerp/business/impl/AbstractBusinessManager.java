@@ -86,17 +86,5 @@ public abstract class AbstractBusinessManager {
         return vValidator;
     }
 
-    /**
-     * {@inheritDoc}
-     */
-    public void updateSequenceEcritureComptable(SequenceEcritureComptable pSequenceEcriture)  {
-        TransactionStatus vTS = getTransactionManager().beginTransactionMyERP();
-        try {
-            getDaoProxy().getComptabiliteDao().updateSequenceEcritureComptable(pSequenceEcriture);
-            getTransactionManager().commitMyERP(vTS);
-            vTS = null;
-        } finally {
-            getTransactionManager().rollbackMyERP(vTS);
-        }
-    }
+
 }
