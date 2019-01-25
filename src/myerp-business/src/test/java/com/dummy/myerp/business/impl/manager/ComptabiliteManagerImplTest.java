@@ -192,7 +192,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
     public void insertEcritureComptableTest() {
 
         vEcritureComptable.setJournal(new JournalComptable("OD", "Operations"));
-        
+
         vEcritureComptable.setDate(today);
         vEcritureComptable.setId(-6);
         year = date.format(vEcritureComptable.getDate());
