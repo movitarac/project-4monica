@@ -29,20 +29,19 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
     String year;
 
     @Test
-    public void addReferenceTest() throws Exception {
-
-        EcritureComptable vEcritureComptable = new EcritureComptable();
+    public void addReferenceTest()  {
         vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
-        vEcritureComptable.setDate(today);
-        year = date.format(vEcritureComptable.getDate());
+        vEcritureComptable.setDate(new Date());
         vEcritureComptable.setLibelle("Libelle");
+        vEcritureComptable.setReference("AC-2019/00001");
         vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(401),
                 null, new BigDecimal(123),
                 null));
-        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(512),
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(411),
                 null, null,
                 new BigDecimal(123)));
-
+        SequenceEcritureComptable seq = new SequenceEcritureComptable();
+        seq.setAnnee(2019);
         assertThrows(NotFoundException.class,
                 () -> {
 

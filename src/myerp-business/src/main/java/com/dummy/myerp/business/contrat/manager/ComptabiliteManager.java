@@ -5,6 +5,7 @@ import java.util.List;
 import com.dummy.myerp.model.bean.comptabilite.CompteComptable;
 import com.dummy.myerp.model.bean.comptabilite.EcritureComptable;
 import com.dummy.myerp.model.bean.comptabilite.JournalComptable;
+import com.dummy.myerp.model.bean.comptabilite.SequenceEcritureComptable;
 import com.dummy.myerp.technical.exception.FunctionalException;
 import com.dummy.myerp.technical.exception.NotFoundException;
 
@@ -83,4 +84,20 @@ public interface ComptabiliteManager {
      * @param pId l'id de l'écriture
      */
     void deleteEcritureComptable(Integer pId);
+
+    /**
+     * Met à jour l'écriture comptable.
+     *
+     * @param sequenceEcritureComptable -
+     *
+     */
+    void updateSequenceEcritureComptable(SequenceEcritureComptable sequenceEcritureComptable);
+
+    /**
+     * Insert une nouvelle sequence écriture comptable.
+     *
+     * @param seq -
+     * @param code
+     */
+    void insertSequenceEcritureComptable( SequenceEcritureComptable seq, String code);
 }

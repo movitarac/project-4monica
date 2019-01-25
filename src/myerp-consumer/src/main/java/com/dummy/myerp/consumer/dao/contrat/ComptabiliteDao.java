@@ -103,4 +103,7 @@ public interface ComptabiliteDao {
      * @param pSequenceEcritureComptable -
      */
     void insertSequenceEcritureComptable(SequenceEcritureComptable pSequenceEcritureComptable, String journalcode);
+
+
+    void deleteSequenceEcritureComptable(SequenceEcritureComptable seq, String journalCode);
 }

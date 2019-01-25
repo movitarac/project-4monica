@@ -151,6 +151,7 @@ class ComptabiliteDaoImplTest extends ConsumerTestCase {
         dao.insertSequenceEcritureComptable(seq, "AC");
         SequenceEcritureComptable seqBis = dao.getSequenceEcritureComptable("AC", 2019);
         assertEquals(53, (int) seqBis.getDerniereValeur());
+        dao.deleteSequenceEcritureComptable(seq, "AC");
 
 
     }

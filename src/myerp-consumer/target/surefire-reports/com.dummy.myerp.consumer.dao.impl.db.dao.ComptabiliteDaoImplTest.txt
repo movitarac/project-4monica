@@ -1,4 +1,20 @@
 -------------------------------------------------------------------------------
 Test set: com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest
 -------------------------------------------------------------------------------
-Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.623 sec - in com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest
+Tests run: 12, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.137 sec <<< FAILURE! - in com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest
+insertSequenceEcritureComptableTest  Time elapsed: 0.61 sec  <<< ERROR!
+org.springframework.dao.DuplicateKeyException: 
+PreparedStatementCallback; SQL [
+                INSERT INTO myerp.sequence_ecriture_comptable (
+                journal_code, annee, derniere_valeur )
+                VALUES (
+                 ?, ?, ? )
+            ]; ERROR: duplicate key value violates unique constraint "sequence_ecriture_comptable_pk"
+  Detail: Key (journal_code, annee)=(AC, 2019) already exists.; nested exception is org.postgresql.util.PSQLException: ERROR: duplicate key value violates unique constraint "sequence_ecriture_comptable_pk"
+  Detail: Key (journal_code, annee)=(AC, 2019) already exists.
+	at com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest.insertSequenceEcritureComptableTest(ComptabiliteDaoImplTest.java:151)
+Caused by: org.postgresql.util.PSQLException: 
+ERROR: duplicate key value violates unique constraint "sequence_ecriture_comptable_pk"
+  Detail: Key (journal_code, annee)=(AC, 2019) already exists.
+	at com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest.insertSequenceEcritureComptableTest(ComptabiliteDaoImplTest.java:151)
+
