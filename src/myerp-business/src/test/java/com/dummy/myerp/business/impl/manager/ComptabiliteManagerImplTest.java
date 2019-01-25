@@ -59,7 +59,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
                     vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
                     vEcritureComptable.setDate(today);
                     vEcritureComptable.setLibelle("libelle");
-                    vEcritureComptable.setReference("AC");
+                    vEcritureComptable.setReference("AC-2019/00001");
                     vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
                             null, new BigDecimal(400),
                             null));
@@ -67,6 +67,9 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
                             null, null,
                             new BigDecimal(400)));
                     manager.checkEcritureComptableUnit(vEcritureComptable);
+
+
+
                 });
     }
 
@@ -100,6 +103,8 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
                     manager.checkEcritureComptableUnit(vEcritureComptable);
                 });
     }
+
+
 
     @Test
     public void checkEcritureComptableUnitRG2() throws Exception {
@@ -180,11 +185,6 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
                     manager.checkEcritureComptableContext(vEcritureComptable);
                 });
 
-        assertThrows(FunctionalException.class, () -> {
-            vEcritureComptable.setId(-9);
-            vEcritureComptable.setReference("BQ-2016/00003");
-            manager.checkEcritureComptableContext(vEcritureComptable);
-        });
 
     }
 
@@ -195,6 +195,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         vEcritureComptable.setDate(today);
         year = date.format(vEcritureComptable.getDate());
         vEcritureComptable.setLibelle("Libelle to insert");
+        vEcritureComptable.setReference(vEcritureComptable.getJournal().getCode()+"-"+year+"/00001");
 
         vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(401),
                 "t1", new BigDecimal(24),
@@ -206,6 +207,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         assertThrows(FunctionalException.class,
                 () -> {
                     manager.insertEcritureComptable(vEcritureComptable);
+                    assertNotNull(vEcritureComptable.getId());
                 });
     }
 
@@ -238,29 +240,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         assertTrue(vList.size() > 1);
     }
 
-    @Test
-    public void checkEcritureComptableUnitRG5annee() throws Exception {
-        assertThrows(FunctionalException.class, () -> {
-            EcritureComptable vEcritureComptable;
-            vEcritureComptable = new EcritureComptable();
-            vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
-            vEcritureComptable.setDate(new Date());
-            vEcritureComptable.setLibelle("Libelle");
 
-            //Création de la référence
-            String refYear = "0000";
-            vEcritureComptable.setReference(vEcritureComptable.getJournal().getCode() + "-" + refYear + "/00001");
-            vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
-                    null, new BigDecimal(123),
-                    null));
-            vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(2),
-                    null, null,
-                    new BigDecimal(123)));
-            manager.checkEcritureComptableUnit(vEcritureComptable);
-        });
-
-
-    }
 
 
 }

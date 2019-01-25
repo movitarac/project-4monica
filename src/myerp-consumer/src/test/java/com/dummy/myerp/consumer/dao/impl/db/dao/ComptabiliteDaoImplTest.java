@@ -128,8 +128,9 @@ class ComptabiliteDaoImplTest extends ConsumerTestCase {
         toBeFoundSequence.setJournalCode("VE");
         toBeFoundSequence.setAnnee(2016);
 
-       SequenceEcritureComptable realSequence = dao.getSequenceEcritureComptable(toBeFoundSequence.getJournalCode(),toBeFoundSequence.getAnnee());
-      assertNotNull(realSequence);
+            SequenceEcritureComptable realSequence = dao.getSequenceEcritureComptable(toBeFoundSequence.getJournalCode(), toBeFoundSequence.getAnnee());
+            assertNotNull(realSequence);
+
 
     }
 

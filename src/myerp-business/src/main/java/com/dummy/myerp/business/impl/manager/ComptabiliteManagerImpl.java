@@ -111,6 +111,11 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         newSequence.setJournalCode(aTrouverSequenceEcritureComptable.getJournalCode());
         newSequence.setAnnee(aTrouverSequenceEcritureComptable.getAnnee());
         newSequence.setDerniereValeur(numeroSequence);
+        try {
+            this.updateEcritureComptable(pEcritureComptable);
+        } catch (FunctionalException e) {
+            e.printStackTrace();
+        }
 
          /*
 
@@ -121,7 +126,6 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         try {
             getDaoProxy().getComptabiliteDao().updateEcritureComptable(pEcritureComptable);
             if(numeroSequence == 1) {
-
                 getDaoProxy().getComptabiliteDao().insertSequenceEcritureComptable(newSequence,aTrouverSequenceEcritureComptable.getJournalCode());
             }else{
                 getDaoProxy().getComptabiliteDao().updateSequenceEcritureComptable(newSequence);
