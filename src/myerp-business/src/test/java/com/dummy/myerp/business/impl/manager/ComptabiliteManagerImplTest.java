@@ -17,6 +17,7 @@ import com.dummy.myerp.testbusiness.business.BusinessTestCase;
 import org.junit.jupiter.api.Test;
 
 
+import static com.dummy.myerp.consumer.ConsumerHelper.getDaoProxy;
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -24,6 +25,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
 
     private ComptabiliteManagerImpl manager = new ComptabiliteManagerImpl();
     EcritureComptable vEcritureComptable = new EcritureComptable();
+    SequenceEcritureComptable vSeq = new SequenceEcritureComptable();
     Date today = new Date();
     SimpleDateFormat date = new SimpleDateFormat("yyyy");
     String year;
@@ -192,6 +194,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
 
         vEcritureComptable.setJournal(new JournalComptable("OD", "Operations"));
         vEcritureComptable.setDate(today);
+        vEcritureComptable.setId(-6);
         year = date.format(vEcritureComptable.getDate());
         vEcritureComptable.setLibelle("Libelle to insert");
         vEcritureComptable.setReference(vEcritureComptable.getJournal().getCode()+"-"+year+"/00001");
@@ -240,6 +243,30 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
     }
 
 
+    @Test
+    public void insertSequenceEcritureComptableTest() throws NotFoundException {
+        vSeq.setDerniereValeur(32);
+        vSeq.setAnnee(2017);
+        manager.insertSequenceEcritureComptable(vSeq, "OD");
+        SequenceEcritureComptable seq =
+                getDaoProxy().getComptabiliteDao().getSequenceEcritureComptable("OD", 2017);
+        assertEquals(2017, (int) seq.getAnnee());
+        getDaoProxy().getComptabiliteDao().deleteSequenceEcritureComptable(seq, "OD");
+    }
+
+    @Test
+    public void updateSequenceEcritureComptableTest() throws NotFoundException {
+
+        vSeq.setDerniereValeur(32);
+        vSeq.setAnnee(2017);
+        manager.insertSequenceEcritureComptable(vSeq, "OD");
+        SequenceEcritureComptable seq =
+                getDaoProxy().getComptabiliteDao().getSequenceEcritureComptable("OD", 2017);
+        seq.setDerniereValeur(65);
+        manager.updateSequenceEcritureComptable(seq);
+        assertEquals(65, (int) seq.getDerniereValeur());
+        getDaoProxy().getComptabiliteDao().deleteSequenceEcritureComptable(seq, "OD");
+    }
 
 
 }
