@@ -258,9 +258,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         TransactionStatus vTS = getTransactionManager().beginTransactionMyERP();
             getDaoProxy().getComptabiliteDao().updateEcritureComptable(pEcritureComptable);
             getTransactionManager().commitMyERP(vTS);
-            //vTS = null;
 
-            //getTransactionManager().rollbackMyERP(vTS);
 
     }
 
