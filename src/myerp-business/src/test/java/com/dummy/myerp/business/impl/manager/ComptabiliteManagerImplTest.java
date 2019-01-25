@@ -118,15 +118,15 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
             vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
                     null, new BigDecimal(234),
                     null));
-            vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(2),
+            vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
                     null, null,
                     new BigDecimal(2346)));
             manager.checkEcritureComptableUnit(vEcritureComptable);
         });
     }
 
-    @Test
-    public void checkEcritureComptableUnitRG3() throws Exception {
+   /* @Test
+    public void checkEcritureComptableUnitRG32Credit() throws Exception {
 
         vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
         vEcritureComptable.setDate(today);
@@ -137,6 +137,24 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
                 null, null,
                 new BigDecimal(1234)));
+        assertThrows(FunctionalException.class,
+                () -> {
+                    manager.checkEcritureComptableUnit(vEcritureComptable);
+
+                });
+    }*/
+    @Test
+    public void checkEcritureComptableUnitRG32Debit() {
+
+        vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
+        vEcritureComptable.setDate(today);
+        vEcritureComptable.setLibelle("Libelle");
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
+                null,
+                null,null));
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
+                null,
+                null,null));
         assertThrows(FunctionalException.class,
                 () -> {
                     manager.checkEcritureComptableUnit(vEcritureComptable);
@@ -267,6 +285,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         assertEquals(65, (int) seq.getDerniereValeur());
         getDaoProxy().getComptabiliteDao().deleteSequenceEcritureComptable(seq, "OD");
     }
+
 
 
 
