@@ -20,7 +20,7 @@ script:
   - mvn --file ./pom.xml clean install -P test-consumer,test-business
 
 after_success:
-  - mvn --file ./src/pom.xml cobertura:cobertura -P test-consumer,test-business
+  - mvn --file pom.xml cobertura:cobertura coveralls:report -P test-consumer,test-business
   
 notifications:
 email: false
