@@ -2,7 +2,6 @@ package com.dummy.myerp.business.impl.manager;
 
 import java.math.BigDecimal;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import java.util.Date;
@@ -201,7 +200,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
 
         vEcritureComptable.setJournal(new JournalComptable("OD", "Operations"));
         vEcritureComptable.setDate(today);
-        vEcritureComptable.setId(-6);
+        //vEcritureComptable.setId(-6);
         year = date.format(vEcritureComptable.getDate());
         vEcritureComptable.setLibelle("Libelle to insert");
 
@@ -211,14 +210,14 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(411),
                 "t2", null,
                 new BigDecimal(24)));
-        vEcritureComptable.setReference(vEcritureComptable.getJournal().getCode() + "-" + year + "/00006");
+        vEcritureComptable.setReference(vEcritureComptable.getJournal().getCode() + "-" + year + "/00089");
         assertThrows(FunctionalException.class,
                 () -> {
                     manager.insertEcritureComptable(vEcritureComptable);
 
-                    assertEquals("OD-2019/00006",vEcritureComptable.getReference());
-
+                    assertEquals("OD-2019/00006", vEcritureComptable.getReference());
                 });
+
     }
 
 
@@ -277,6 +276,6 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         getDaoProxy().getComptabiliteDao().deleteSequenceEcritureComptable(seq, "OD");
     }
 
-    
+
 
 }
