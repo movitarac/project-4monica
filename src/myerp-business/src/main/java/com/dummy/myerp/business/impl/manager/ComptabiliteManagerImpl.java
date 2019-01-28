@@ -68,7 +68,6 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         //Ex : Journal de banque (BQ), écriture au 31/12/2016
         //--> BQ-2016/00001
         /* Le principe :
-
                 1.  Remonter depuis la persitance la dernière valeur de la séquence du journal pour l'année de l'écriture
                     (table sequence_ecriture_comptable)*/
 

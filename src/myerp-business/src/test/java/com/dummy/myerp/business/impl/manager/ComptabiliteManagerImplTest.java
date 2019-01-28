@@ -229,7 +229,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
                 if (vEcritureComptable.getId() == -5) {
                     vEcritureComptable.setLibelle("test for update");
 
-                                manager.updateEcritureComptable(vEcritureComptable);
+                    manager.updateEcritureComptable(vEcritureComptable);
                 }
             }
         } catch (Exception e) {
