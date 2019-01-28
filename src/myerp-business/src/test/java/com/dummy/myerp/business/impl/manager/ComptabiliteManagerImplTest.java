@@ -216,7 +216,6 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         assertThrows(FunctionalException.class,
                 () -> {
                     manager.insertEcritureComptable(vEcritureComptable);
-                    assertNotNull(vEcritureComptable.getId());
 
                     assertEquals("OD-2019/00006",vEcritureComptable.getReference());
 
@@ -281,7 +280,26 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
 
 
 
+    @Test
+    public void testInsertEcritureComptable() {
+        EcritureComptable vEcritureComptable;
+        vEcritureComptable = new EcritureComptable();
+        vEcritureComptable.setId(2);
+        vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
+        vEcritureComptable.setDate(new Date());
+        vEcritureComptable.setLibelle("Libelle");
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(401),
+                null, new BigDecimal(123),
+                null));
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(512),
+                null, null,
+                new BigDecimal(123)));
 
+        assertThrows(NullPointerException.class,
+                () -> {
+                    manager.insertEcritureComptable(vEcritureComptable);
+                });
+    }
 
 
 }
