@@ -241,13 +241,10 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
     public void insertEcritureComptable(EcritureComptable pEcritureComptable) throws FunctionalException {
         this.checkEcritureComptable(pEcritureComptable);
         TransactionStatus vTS = getTransactionManager().beginTransactionMyERP();
-        try {
+
             getDaoProxy().getComptabiliteDao().insertEcritureComptable(pEcritureComptable);
             getTransactionManager().commitMyERP(vTS);
-            vTS = null;
-        } finally {
-            getTransactionManager().rollbackMyERP(vTS);
-        }
+
     }
 
     /**
@@ -259,7 +256,6 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
             getDaoProxy().getComptabiliteDao().updateEcritureComptable(pEcritureComptable);
             getTransactionManager().commitMyERP(vTS);
 
-
     }
 
     /**
@@ -268,11 +264,8 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
     @Override
     public void deleteEcritureComptable(Integer pId) {
         TransactionStatus vTS = getTransactionManager().beginTransactionMyERP();
-
             getDaoProxy().getComptabiliteDao().deleteEcritureComptable(pId);
             getTransactionManager().commitMyERP(vTS);
-
-            //getTransactionManager().rollbackMyERP(vTS);
 
     }
     @Override

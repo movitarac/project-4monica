@@ -49,7 +49,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
                 () -> {
 
                     manager.addReference(vEcritureComptable);
-                    assertNotNull(vEcritureComptable.getReference());
+                    //assertNotNull(vEcritureComptable.getReference());
                     assertEquals("AC-2019/00001", vEcritureComptable.getReference());
 
                });
@@ -225,13 +225,14 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
 
 
     @Test
-    public void updateEcritureComptableTest() throws Exception {
+    public void updateEcritureComptableTest() {
         try {
             List<EcritureComptable> vListeEcritureComptable = manager.getListEcritureComptable();
             for (EcritureComptable vEcritureComptable : vListeEcritureComptable) {
                 if (vEcritureComptable.getId() == -5) {
                     vEcritureComptable.setLibelle("test for update");
-                    manager.updateEcritureComptable(vEcritureComptable);
+
+                                manager.updateEcritureComptable(vEcritureComptable);
                 }
             }
         } catch (Exception e) {

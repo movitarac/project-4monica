@@ -9,7 +9,6 @@ before_script:
 script:
   - mvn --file ./src/pom.xml clean jacoco:prepare-agent install jacoco:report coveralls:report -P test-consumer,test-business
 after_script:
-  - cd src
-  - mvn clean install jacoco:report coveralls:report
+  - mvn clean test jacoco:report coveralls:report
   - docker-compose -f docker/dev/docker-compose.yml stop
   - docker-compose -f docker/dev/docker-compose.yml rm -f
