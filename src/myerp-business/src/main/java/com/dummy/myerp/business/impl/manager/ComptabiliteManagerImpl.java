@@ -184,14 +184,6 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         // vérifier que l'année dans la référence correspond bien à la date de l'écriture, idem pour le code journal...
         //exemple : BQ-2016/00001
 
-        //annee
-
-        if (!pEcritureComptable.getJournal().getCode().equals(pEcritureComptable.getReference().substring(0, 2))) {
-            throw new FunctionalException(
-                    "Le code journal dans la reference ne correspond pas au code journal de l'ecriture "
-            );
-
-        }
 
         // the string representation of date (month/day/year)
         DateFormat df = new SimpleDateFormat("yyyy");
@@ -201,6 +193,14 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
             throw new FunctionalException(
                     "L'annee ecrit la reference ne correspond pas à la date de l'écriture de l'ecriture "
             );
+        }
+        //annee
+
+        if (!pEcritureComptable.getJournal().getCode().equals(pEcritureComptable.getReference().substring(0, 2))) {
+            throw new FunctionalException(
+                    "Le code journal dans la reference ne correspond pas au code journal de l'ecriture "
+            );
+
         }
 
     }
