@@ -7,9 +7,14 @@ sudo: false
 
 services:
   - docker
-  
+
+before_install:
+- cd docker/dev
+- docker-compose up -d
+
 before_script:
-  - docker-compose -f docker/dev/docker-compose.yml up -d
+- cd ../../src
+  
   
 script:
   - mvn --file ./src/pom.xml clean install -P test-consumer,test-business
