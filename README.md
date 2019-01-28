@@ -1,4 +1,5 @@
 # MyERP
+[![Build Status](https://travis-ci.org/movitarac/project-4monica.svg?branch=master)](https://travis-ci.org/movitarac/project-4monica)
 [![Coverage Status](https://coveralls.io/repos/github/movitarac/project-4monica/badge.svg?branch=master)](https://coveralls.io/github/movitarac/project-4monica?branch=master)
 
 ## Organisation du répertoire
