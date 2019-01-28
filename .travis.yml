@@ -1,14 +1,25 @@
 language: java
+
 jdk:
   - oraclejdk8
+  
 sudo: false
+
 services:
   - docker
+  
 before_script:
   - docker-compose -f docker/dev/docker-compose.yml up -d
+  
 script:
-  - mvn --file ./src/pom.xml clean jacoco:prepare-agent install jacoco:report coveralls:report -P test-consumer,test-business
-after_script:
-  - mvn clean test jacoco:report coveralls:report
-  - docker-compose -f docker/dev/docker-compose.yml stop
-  - docker-compose -f docker/dev/docker-compose.yml rm -f
+  - mvn --file ./src/pom.xml clean install -P test-consumer,test-business
+  - cd ../docker/dev
+  - docker-compose stop
+  - docker-compose rm -v
+  - docker-compose up -d
+  - cd ../../src
+after_success:
+  - mvn --file ./src/pom.xml cobertura:cobertura -P test-consumer,test-business
+  
+notifications:
+email: false
