@@ -39,8 +39,6 @@ public class EcritureComptable {
     @Size(min = 2)
     private final List<LigneEcritureComptable> listLigneEcriture = new ArrayList<>();
 
-    private JournalComptable journalComptable;
-
     // ==================== Getters/Setters ====================
     public Integer getId() {
         return id;
@@ -74,10 +72,6 @@ public class EcritureComptable {
     }
     public List<LigneEcritureComptable> getListLigneEcriture() {
         return listLigneEcriture;
-    }
-    public JournalComptable getJournalComptable() { return journalComptable; }
-    public void setJournalComptable(JournalComptable journalComptable) {
-        this.journalComptable = journalComptable;
     }
 
     /**

@@ -63,10 +63,6 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
     @Override
     public synchronized void addReference(EcritureComptable pEcritureComptable) throws NotFoundException{
         //Implementation OK
-        //RG_COMPTA 5
-        // La référence d'une écriture comptable est composée du code du journal dans lequel figure l'écriture suivi de l'année et d'un numéro de séquence (propre à chaque journal) sur 5 chiffres incrémenté automatiquement à chaque écriture. Le formatage de la référence est : XX-AAAA/#####.
-        //Ex : Journal de banque (BQ), écriture au 31/12/2016
-        //--> BQ-2016/00001
         /* Le principe :
                 1.  Remonter depuis la persitance la dernière valeur de la séquence du journal pour l'année de l'écriture
                     (table sequence_ecriture_comptable)*/
@@ -80,14 +76,12 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         aTrouverSequenceEcritureComptable.setJournalCode(pEcritureComptable.getJournal().getCode());
         //get the existing sequence ecriture by given year and given journalcode
         SequenceEcritureComptable existSequenceEcritureComptable = getDaoProxy().getComptabiliteDao().getSequenceEcritureComptable(aTrouverSequenceEcritureComptable.getJournalCode(), aTrouverSequenceEcritureComptable.getAnnee());
-
                     /*
                 2.  * S'il n'y a aucun enregistrement pour le journal pour l'année concernée :
                         1. Utiliser le numéro 1.
                     * Sinon :
                         1. Utiliser la dernière valeur + 1
-                        */
-
+                     */
         int numeroSequence;
         if (existSequenceEcritureComptable == null) {
             numeroSequence = 1;
@@ -101,8 +95,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
                 + String.format("%05d", numeroSequence);
         pEcritureComptable.setReference(reference);
         this.updateEcritureComptable(pEcritureComptable);
-
- /*
+        /*
                 4.  Enregistrer (insert/update) la valeur de la séquence en persitance
                     (table sequence_ecriture_comptable)
          */
@@ -279,7 +272,6 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         } finally {
             getTransactionManager().rollbackMyERP(vTS);
         }
-
     }
 
     @Override
