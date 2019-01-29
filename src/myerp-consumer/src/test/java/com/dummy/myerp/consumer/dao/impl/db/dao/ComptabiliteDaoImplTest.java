@@ -70,11 +70,9 @@ class ComptabiliteDaoImplTest extends ConsumerTestCase {
         } catch (NotFoundException e) {
             e.printStackTrace();
         }
-
-
-
-
     }
+
+
     /***********Ligne Ecriture ***********/
     @Test
     void loadListLigneEcriture() {
@@ -130,8 +128,6 @@ class ComptabiliteDaoImplTest extends ConsumerTestCase {
 
             SequenceEcritureComptable realSequence = dao.getSequenceEcritureComptable(toBeFoundSequence.getJournalCode(), toBeFoundSequence.getAnnee());
             assertNotNull(realSequence);
-
-
     }
 
     @Test
@@ -152,7 +148,6 @@ class ComptabiliteDaoImplTest extends ConsumerTestCase {
         SequenceEcritureComptable seqBis = dao.getSequenceEcritureComptable("AC", 2019);
         assertEquals(53, (int) seqBis.getDerniereValeur());
         dao.deleteSequenceEcritureComptable(seq, "AC");
-
 
     }
 }

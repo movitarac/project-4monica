@@ -40,3 +40,14 @@ Il comporte :
     docker-compose rm -v
     docker-compose up
 
+## Corrections et Additions 
+
+* `getTotalCredit()` dans `com.dummy.myerp.model.bean.comptabilite.EcritureComptable` : mettre `getCredit()` au lieu de `getCredit()`
+* `isEquilibree()` dans `com.dummy.myerp.model.bean.comptabilite.EcritureComptable` : mettre `equals(); ` au lieu de `compareTo()`	
+* `sqlContext.xml` dans `com.dummy.myerp.consumer` : ajouter `,` entre debit-credit  
+* Changer JUnit 4 -> JUnit 5
+* Ajouter un attribut, getter-setter pour String journalCode dans `com.dummy.myerp.model.bean.comptabilite.SequenceEcritureComptable` 
+* Ajouter une methode `getSequenceEcritureComptable()` dans `ComptabiliteDao` + `ComptabiliteDaoImpl` et ajouter la requete `SQLgetSequenceEcritureComptable` dans sqlContext.xml   
+* Ajouter des methodes `insertSequenceEcritureComptable()` + `updateSequenceEcritureComptable()`  dans `ComptabiliteDao` + `ComptabiliteDaoImpl` et ajouter des requetes `SQLinsertSequenceEcritureComptable` + `SQLupdateSequenceEcritureComptable` dans sqlContext.xml 
+  
+            

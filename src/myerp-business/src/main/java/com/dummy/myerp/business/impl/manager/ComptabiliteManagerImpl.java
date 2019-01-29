@@ -61,7 +61,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
      */
     //
     @Override
-    public synchronized void addReference(EcritureComptable pEcritureComptable) throws NotFoundException {
+    public synchronized void addReference(EcritureComptable pEcritureComptable) throws NotFoundException{
         //Implementation OK
         //RG_COMPTA 5
         // La référence d'une écriture comptable est composée du code du journal dans lequel figure l'écriture suivi de l'année et d'un numéro de séquence (propre à chaque journal) sur 5 chiffres incrémenté automatiquement à chaque écriture. Le formatage de la référence est : XX-AAAA/#####.
@@ -70,7 +70,6 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         /* Le principe :
                 1.  Remonter depuis la persitance la dernière valeur de la séquence du journal pour l'année de l'écriture
                     (table sequence_ecriture_comptable)*/
-
         SequenceEcritureComptable aTrouverSequenceEcritureComptable = new SequenceEcritureComptable();
         //get only the year
         Calendar date = Calendar.getInstance();
@@ -79,7 +78,6 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         aTrouverSequenceEcritureComptable.setAnnee(year);
         //get the journal code from ecriturecomptamble
         aTrouverSequenceEcritureComptable.setJournalCode(pEcritureComptable.getJournal().getCode());
-
         //get the existing sequence ecriture by given year and given journalcode
         SequenceEcritureComptable existSequenceEcritureComptable = getDaoProxy().getComptabiliteDao().getSequenceEcritureComptable(aTrouverSequenceEcritureComptable.getJournalCode(), aTrouverSequenceEcritureComptable.getAnnee());
 
@@ -95,12 +93,10 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
             numeroSequence = 1;
         } else {
             numeroSequence = existSequenceEcritureComptable.getDerniereValeur() + 1;
-
         }
                 /*
                 3.  Mettre à jour la référence de l'écriture avec la référence calculée (RG_Compta_5)
                 */
-
         String reference = pEcritureComptable.getJournal().getCode() + "-" + year + "/"
                 + String.format("%05d", numeroSequence);
         pEcritureComptable.setReference(reference);
@@ -182,26 +178,24 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         //  ===== RG_Compta_5 : Format et contenu de la référence
         // vérifier que l'année dans la référence correspond bien à la date de l'écriture, idem pour le code journal...
         //exemple : BQ-2016/00001
+        if (pEcritureComptable.getReference()!=null ){
 
-
-        // the string representation of date (month/day/year)
-        DateFormat df = new SimpleDateFormat("yyyy");
-        // Get the year today using dateformat object.
-        String yearRef = df.format(pEcritureComptable.getDate());
-        if (!yearRef.equals(pEcritureComptable.getReference().substring(3, 7))) {
-            throw new FunctionalException(
-                    "L'annee ecrit la reference ne correspond pas à la date de l'écriture de l'ecriture "
-            );
+            // the string representation of date (month/day/year)
+            DateFormat df = new SimpleDateFormat("yyyy");
+            // Get the year today using dateformat object.
+            String yearRef = df.format(pEcritureComptable.getDate());
+            if (!yearRef.equals(pEcritureComptable.getReference().substring(3, 7))) {
+                throw new FunctionalException(
+                        "L'annee ecrit la reference ne correspond pas à la date de l'écriture de l'ecriture "
+                );
+            }
+            //annee
+            if (!pEcritureComptable.getJournal().getCode().equals(pEcritureComptable.getReference().substring(0, 2))) {
+                throw new FunctionalException(
+                        "Le code journal dans la reference ne correspond pas au code journal de l'ecriture "
+                );
+            }
         }
-        //annee
-
-        if (!pEcritureComptable.getJournal().getCode().equals(pEcritureComptable.getReference().substring(0, 2))) {
-            throw new FunctionalException(
-                    "Le code journal dans la reference ne correspond pas au code journal de l'ecriture "
-            );
-
-        }
-
     }
 
 
@@ -253,7 +247,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
      * {@inheritDoc}
      */
     @Override
-    public void updateEcritureComptable(EcritureComptable pEcritureComptable) {
+    public void updateEcritureComptable(EcritureComptable pEcritureComptable)  {
         TransactionStatus vTS = getTransactionManager().beginTransactionMyERP();
         try {
             getDaoProxy().getComptabiliteDao().updateEcritureComptable(pEcritureComptable);
@@ -262,7 +256,6 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
         } finally {
             getTransactionManager().rollbackMyERP(vTS);
         }
-
     }
 
     /**
