@@ -11,7 +11,10 @@ services:
 before_install:
 - cd docker/dev
 - docker-compose up -d
+
+before_script:
 - cd ../../src
+  
   
 script:
   - mvn --file ./pom.xml clean install -P test-consumer,test-business
