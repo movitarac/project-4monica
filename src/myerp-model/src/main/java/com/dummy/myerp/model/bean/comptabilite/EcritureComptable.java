@@ -39,6 +39,7 @@ public class EcritureComptable {
     @Size(min = 2)
     private final List<LigneEcritureComptable> listLigneEcriture = new ArrayList<>();
 
+    private JournalComptable journalComptable;
 
     // ==================== Getters/Setters ====================
     public Integer getId() {
@@ -74,6 +75,10 @@ public class EcritureComptable {
     public List<LigneEcritureComptable> getListLigneEcriture() {
         return listLigneEcriture;
     }
+    public JournalComptable getJournalComptable() { return journalComptable; }
+    public void setJournalComptable(JournalComptable journalComptable) {
+        this.journalComptable = journalComptable;
+    }
 
     /**
      * Calcul et renvoie le total des montants au débit des lignes d'écriture
@@ -99,6 +104,7 @@ public class EcritureComptable {
     public BigDecimal getTotalCredit() {
         BigDecimal vRetour = BigDecimal.ZERO;
         for (LigneEcritureComptable vLigneEcritureComptable : listLigneEcriture) {
+            //change
             if (vLigneEcritureComptable.getCredit() != null) {
                 vRetour = vRetour.add(vLigneEcritureComptable.getCredit());
             }
@@ -111,6 +117,7 @@ public class EcritureComptable {
      * @return boolean
      */
     public boolean isEquilibree() {
+        //change
         int dif = this.getTotalDebit().compareTo(getTotalCredit());
         boolean vRetour;
         if (dif == 0){

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="3.718" tests="12" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="2.047" tests="12" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2018.3.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -62,16 +62,16 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="updateSequenceEcritureComptableTest" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="2.073"/>
-  <testcase name="deleteEcritureComptableTest" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.042"/>
-  <testcase name="getListCompteComptable" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.124"/>
-  <testcase name="insertSequenceEcritureComptableTest" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.098"/>
-  <testcase name="getSequenceEcritureComptableTest" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.017"/>
-  <testcase name="getListEcritureComptable" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.493"/>
-  <testcase name="insertEcritureComptable" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.235"/>
-  <testcase name="getListJournalComptable" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.015"/>
-  <testcase name="loadListLigneEcriture" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.047"/>
-  <testcase name="updateEcritureComptable" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.259"/>
-  <testcase name="getEcritureComptableByRef" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.146"/>
-  <testcase name="getEcritureComptable" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.069"/>
+  <testcase name="updateSequenceEcritureComptableTest" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.824"/>
+  <testcase name="deleteEcritureComptableTest" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.081"/>
+  <testcase name="getListCompteComptable" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.051"/>
+  <testcase name="insertSequenceEcritureComptableTest" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.115"/>
+  <testcase name="getSequenceEcritureComptableTest" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.031"/>
+  <testcase name="getListEcritureComptable" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.466"/>
+  <testcase name="insertEcritureComptable" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.142"/>
+  <testcase name="getListJournalComptable" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.017"/>
+  <testcase name="loadListLigneEcriture" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.033"/>
+  <testcase name="updateEcritureComptable" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.168"/>
+  <testcase name="getEcritureComptableByRef" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.046"/>
+  <testcase name="getEcritureComptable" classname="com.dummy.myerp.consumer.dao.impl.db.dao.ComptabiliteDaoImplTest" time="0.055"/>
 </testsuite>

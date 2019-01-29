@@ -62,5 +62,5 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="getByCodeTest" classname="com.dummy.myerp.model.bean.comptabilite.JournalComptableTest" time="0.004"/>
+  <testcase name="getByCodeTest" classname="com.dummy.myerp.model.bean.comptabilite.JournalComptableTest" time="0.009"/>
 </testsuite>

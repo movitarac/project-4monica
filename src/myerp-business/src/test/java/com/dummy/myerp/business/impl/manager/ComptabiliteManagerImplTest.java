@@ -52,6 +52,13 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         manager.addReference(vEcritureComptable);
 
         assertNotNull(vEcritureComptable.getReference());
+        System.out.println(vEcritureComptable.getReference());
+        /*SequenceEcritureComptable seq = new SequenceEcritureComptable("BQ",2016);
+        vEcritureComptable.getJournal().getListSequence().add(seq);
+        manager.addReference(vEcritureComptable);
+        System.out.println(vEcritureComptable.getReference());*/
+
+
     }
 
 

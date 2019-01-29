@@ -1,5 +1,6 @@
 package com.dummy.myerp.model.bean.comptabilite;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import javax.validation.constraints.NotNull;
@@ -22,7 +23,7 @@ public class JournalComptable {
     @Size(min = 1, max = 150)
     private String libelle;
 
-
+    private final List<SequenceEcritureComptable> listSequence = new ArrayList<>();
     // ==================== Constructeurs ====================
     /**
      * Instantiates a new Journal comptable.
@@ -55,7 +56,9 @@ public class JournalComptable {
     public void setLibelle(String pLibelle) {
         libelle = pLibelle;
     }
-
+    public List<SequenceEcritureComptable> getListSequence() {
+        return listSequence;
+    }
 
     // ==================== Méthodes ====================
     @Override
