@@ -151,7 +151,6 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         assertThrows(FunctionalException.class,
                 () -> {
                     vEcritureComptable.setReference("BQ-2019/00001");
-
                     assertEquals("BQ", vEcritureComptable.getReference().substring(0, 2));
                     manager.checkEcritureComptableUnit(vEcritureComptable);
                 });
