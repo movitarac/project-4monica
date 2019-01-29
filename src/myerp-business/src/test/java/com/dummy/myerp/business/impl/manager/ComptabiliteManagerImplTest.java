@@ -147,7 +147,6 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
                 null));
         vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(2),
                 null, null, new BigDecimal(123)));
-
         assertThrows(FunctionalException.class,
                 () -> {
                     vEcritureComptable.setReference("BQ-2019/00001");
