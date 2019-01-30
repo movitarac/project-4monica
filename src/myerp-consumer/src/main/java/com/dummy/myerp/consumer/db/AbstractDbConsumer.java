@@ -23,8 +23,7 @@ public abstract class AbstractDbConsumer {
 
     /** Map des DataSources */
     private static Map<DataSourcesEnum, DataSource> mapDataSource;
-
-
+    
     // ==================== Constructeurs ====================
 
     /**
