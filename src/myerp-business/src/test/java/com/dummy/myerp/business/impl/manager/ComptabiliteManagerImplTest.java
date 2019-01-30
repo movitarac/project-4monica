@@ -32,7 +32,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
 
 
     @Test
-    public void addReference() throws Exception {
+    public void addReferenceTestUpdate() throws Exception {
         vEcritureComptable.setId(-5);
         vEcritureComptable.setJournal(new JournalComptable("BQ", "Banque"));
 
@@ -48,6 +48,28 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(411),
                 null, null, new BigDecimal(3000)));
 
+        manager.addReference(vEcritureComptable);
+        assertNotNull(vEcritureComptable.getReference());
+
+    }
+    @Test
+    public void addReferenceTestInsert() throws Exception {
+        vEcritureComptable.setId(-5);
+        vEcritureComptable.setJournal(new JournalComptable("BQ", "Banque"));
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        vEcritureComptable.setDate(sdf.parse("2016-12-27 00:00:00"));
+        vEcritureComptable.setLibelle("Paiement Facture C110002");
+
+
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(512),
+                null, new BigDecimal(3000), null));
+
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(411),
+                null, null, new BigDecimal(3000)));
+
+        vEcritureComptable.getJournal().getSequenceEcritureComptableList().add(new SequenceEcritureComptable("BQ",2016));
         manager.addReference(vEcritureComptable);
         assertNotNull(vEcritureComptable.getReference());
 
@@ -136,7 +158,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
 
 
     @Test
-    public void checkEcritureComptableUnitRG5() throws FunctionalException, NotFoundException {
+    public void checkEcritureComptableUnitRG5(){
         vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
         vEcritureComptable.setDate(today);
         vEcritureComptable.setLibelle("Libelle");

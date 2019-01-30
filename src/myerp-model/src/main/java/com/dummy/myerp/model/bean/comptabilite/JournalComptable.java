@@ -59,7 +59,6 @@ public class JournalComptable {
     public void setLibelle(String pLibelle) {
         libelle = pLibelle;
     }
-
     //////////====================added====================//////////
     public List<SequenceEcritureComptable> getSequenceEcritureComptableList() {
         return sequenceEcritureComptableList;

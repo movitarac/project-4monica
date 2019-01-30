@@ -35,5 +35,12 @@ public class JournalComptableTest {
         assertEquals(JournalComptable.getByCode(vJournalList,"AB"),vJournal);
     }
 
+    @Test
+    public void toStringTest() {
+        String realToString="JournalComptable{code='AB', libelle='credit client'}";
+        assertEquals(vJournal.toString(),realToString);
 
+
+
+    }
 }
