@@ -44,6 +44,7 @@ Il comporte :
 
 * `getTotalCredit()` dans `com.dummy.myerp.model.bean.comptabilite.EcritureComptable` : mettre `getCredit()` au lieu de `getCredit()`
 * `isEquilibree()` dans `com.dummy.myerp.model.bean.comptabilite.EcritureComptable` : mettre `equals(); ` au lieu de `compareTo()`	
+* `updateEcritureComptable()` dans `com.dummy.myerp.business.impl.manager.ComptabiliteManagerImpl` : rajouter `this.checkEcritureComptable(pEcritureComptable);` 
 * `sqlContext.xml` dans `com.dummy.myerp.consumer` : ajouter `,` entre debit-credit  
 * Changer JUnit 4 -> JUnit 5
 * Ajouter un attribut, getter-setter pour String journalCode dans `com.dummy.myerp.model.bean.comptabilite.SequenceEcritureComptable` 

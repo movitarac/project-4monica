@@ -31,7 +31,6 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
     String year;
 
 
-
     @Test
     public void addReference() throws Exception {
         vEcritureComptable.setId(-5);
@@ -50,7 +49,6 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
                 null, null, new BigDecimal(3000)));
 
         manager.addReference(vEcritureComptable);
-
         assertNotNull(vEcritureComptable.getReference());
 
     }
@@ -101,7 +99,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
 
 
     @Test
-    public void checkEcritureComptableUnitRG2()  {
+    public void checkEcritureComptableUnitRG2() {
         assertThrows(FunctionalException.class, () -> {
             vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
             vEcritureComptable.setDate(today);
@@ -125,10 +123,10 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         vEcritureComptable.setLibelle("Libelle");
         vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
                 null,
-                null,null));
+                null, null));
         vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
                 null,
-                null,null));
+                null, null));
         assertThrows(FunctionalException.class,
                 () -> {
                     manager.checkEcritureComptableUnit(vEcritureComptable);
@@ -137,21 +135,21 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
     }
 
 
-
     @Test
-    public void checkEcritureComptableUnitRG5()  {
+    public void checkEcritureComptableUnitRG5() throws FunctionalException, NotFoundException {
         vEcritureComptable.setJournal(new JournalComptable("AC", "Achat"));
         vEcritureComptable.setDate(today);
         vEcritureComptable.setLibelle("Libelle");
-        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(1),
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(411),
                 null, new BigDecimal(123),
                 null));
-        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(2),
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(512),
                 null, null, new BigDecimal(123)));
+
         assertThrows(FunctionalException.class,
                 () -> {
-                    vEcritureComptable.setReference("BQ-2019/00001");
-                    assertEquals("BQ", vEcritureComptable.getReference().substring(0, 2));
+                    vEcritureComptable.setReference("AC-2019/00001");
+                    assertEquals("AC", vEcritureComptable.getReference().substring(0, 2));
                     manager.checkEcritureComptableUnit(vEcritureComptable);
                 });
         DateFormat df = new SimpleDateFormat("yyyy");
@@ -175,7 +173,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
 
 
     @Test
-    public void checkEcritureComptableContextTestViolation()  {
+    public void checkEcritureComptableContextTestViolation() {
 
         assertThrows(FunctionalException.class,
                 () -> {
@@ -204,6 +202,25 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         vEcritureComptable.setId(6);
         vEcritureComptable.setLibelle("Libelle to insert");
 
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(4456),
+                "t1", new BigDecimal(24),
+                null));
+        vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(4457),
+                "t2", null,
+                new BigDecimal(24)));
+
+        manager.insertEcritureComptable(vEcritureComptable);
+
+
+    }
+
+    @Test
+    public void updateEcritureComptableTest() throws Exception {
+        vEcritureComptable.setJournal(new JournalComptable("OD", "Operations"));
+        vEcritureComptable.setDate(today);
+        vEcritureComptable.setId(6);
+        vEcritureComptable.setLibelle("Libelle to insert");
+
         vEcritureComptable.getListLigneEcriture().add(new LigneEcritureComptable(new CompteComptable(401),
                 "t1", new BigDecimal(24),
                 null));
@@ -211,25 +228,9 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
                 "t2", null,
                 new BigDecimal(24)));
 
-                    manager.insertEcritureComptable(vEcritureComptable);
-
-
-    }
-
-    @Test
-    public void updateEcritureComptableTest() {
-        try {
-            List<EcritureComptable> vListeEcritureComptable = manager.getListEcritureComptable();
-            for (EcritureComptable vEcritureComptable : vListeEcritureComptable) {
-                if (vEcritureComptable.getId() == -5) {
-                    vEcritureComptable.setLibelle("test for update");
-
-                    manager.updateEcritureComptable(vEcritureComptable);
-                }
-            }
-        } catch (Exception e) {
-            fail("Error during updating");
-        }
+        manager.insertEcritureComptable(vEcritureComptable);
+        vEcritureComptable.setLibelle("libelle for update");
+        manager.updateEcritureComptable(vEcritureComptable);
 
     }
 
@@ -270,7 +271,6 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         assertEquals(65, (int) seq.getDerniereValeur());
         getDaoProxy().getComptabiliteDao().deleteSequenceEcritureComptable(seq, "OD");
     }
-
 
 
 }

@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest
 -------------------------------------------------------------------------------
-Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.972 sec - in com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest
+Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.551 sec - in com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest

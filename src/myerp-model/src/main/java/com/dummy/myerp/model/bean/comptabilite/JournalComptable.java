@@ -23,8 +23,10 @@ public class JournalComptable {
     @Size(min = 1, max = 150)
     private String libelle;
 
-
+    //////////====================added====================//////////
     private List<SequenceEcritureComptable> sequenceEcritureComptableList = new ArrayList<>();
+    private List<EcritureComptable> ecritureComptableList = new ArrayList<>();
+
     // ==================== Constructeurs ====================
     /**
      * Instantiates a new Journal comptable.
@@ -57,11 +59,19 @@ public class JournalComptable {
     public void setLibelle(String pLibelle) {
         libelle = pLibelle;
     }
-   public List<SequenceEcritureComptable> getSequenceEcritureComptableList() {
+
+    //////////====================added====================//////////
+    public List<SequenceEcritureComptable> getSequenceEcritureComptableList() {
         return sequenceEcritureComptableList;
     }
     public void setSequenceEcritureComptableList(List<SequenceEcritureComptable> sequenceEcritureComptableList) {
         this.sequenceEcritureComptableList = sequenceEcritureComptableList;
+    }
+    public List<EcritureComptable> getEcritureComptableList() {
+        return ecritureComptableList;
+    }
+    public void setEcritureComptableList(List<EcritureComptable> ecritureComptableList) {
+        this.ecritureComptableList = ecritureComptableList;
     }
 
     // ==================== Méthodes ====================
