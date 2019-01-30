@@ -188,7 +188,7 @@ public class ComptabiliteManagerImpl extends AbstractBusinessManager implements 
             }
         }
     }
-
+    
 
     /**
      * Vérifie que l'Ecriture comptable respecte les règles de gestion liées au contexte
