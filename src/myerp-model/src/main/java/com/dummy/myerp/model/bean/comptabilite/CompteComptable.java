@@ -2,6 +2,7 @@ package com.dummy.myerp.model.bean.comptabilite;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import javax.validation.constraints.NotNull;
@@ -21,7 +22,8 @@ public class CompteComptable {
     @NotNull
     @Size(min = 1, max = 150)
     private String libelle;
-
+    //////////====================added====================//////////
+    private List<LigneEcritureComptable> listLigneEcriture = new ArrayList<>();
 
     // ==================== Constructeurs ====================
     /**
@@ -64,7 +66,13 @@ public class CompteComptable {
     public void setLibelle(String pLibelle) {
         libelle = pLibelle;
     }
-
+    //////////====================added====================//////////
+    public List<LigneEcritureComptable> getListLigneEcriture() {
+        return listLigneEcriture;
+    }
+    public void setListLigneEcriture(List<LigneEcritureComptable> listLigneEcriture) {
+        this.listLigneEcriture = listLigneEcriture;
+    }
 
     // ==================== Méthodes ====================
     @Override

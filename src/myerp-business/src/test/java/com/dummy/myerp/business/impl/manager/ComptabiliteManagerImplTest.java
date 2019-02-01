@@ -92,7 +92,6 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
                             new BigDecimal(400)));
                     manager.checkEcritureComptableUnit(vEcritureComptable);
 
-
                 });
     }
 
@@ -282,7 +281,6 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
 
     @Test
     public void updateSequenceEcritureComptableTest() throws NotFoundException {
-
         vSeq.setDerniereValeur(32);
         vSeq.setAnnee(2017);
         manager.insertSequenceEcritureComptable(vSeq, "OD");
