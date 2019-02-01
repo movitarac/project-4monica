@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.dummy.myerp.model.bean.comptabilite.JournalComptableTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.dummy.myerp.model.bean.comptabilite.JournalComptableTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.013 sec - in com.dummy.myerp.model.bean.comptabilite.JournalComptableTest
