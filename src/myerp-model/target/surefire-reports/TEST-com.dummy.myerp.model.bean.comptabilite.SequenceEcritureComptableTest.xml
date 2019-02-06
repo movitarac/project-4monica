@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.dummy.myerp.model.bean.comptabilite.SequenceEcritureComptableTest" time="0.004" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.dummy.myerp.model.bean.comptabilite.SequenceEcritureComptableTest" time="0.013" tests="4" errors="0" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2018.3.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -7,7 +7,7 @@
     <property name="java.vm.version" value="25.191-b12"/>
     <property name="gopherProxySet" value="false"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
-    <property name="maven.multiModuleProjectDirectory" value="/Users/Vita/Documents/OC/p4/project4-monica/src"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-model"/>
     <property name="java.vendor.url" value="http://java.oracle.com/"/>
     <property name="path.separator" value=":"/>
     <property name="guice.disable.misplaced.annotation.check" value="true"/>
@@ -17,7 +17,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.os.patch.level" value="unknown"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
-    <property name="user.dir" value="/Users/Vita/Documents/OC/p4/project4-monica/src"/>
+    <property name="user.dir" value="/Users/Vita/Documents/OC/p4/project4-monica/src/myerp-model"/>
     <property name="java.runtime.version" value="1.8.0_191-b12"/>
     <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
     <property name="java.endorsed.dirs" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/jre/lib/endorsed"/>
@@ -62,5 +62,8 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="toStringTest" classname="com.dummy.myerp.model.bean.comptabilite.SequenceEcritureComptableTest" time="0.004"/>
+  <testcase name="constructor2BParamsTest" classname="com.dummy.myerp.model.bean.comptabilite.SequenceEcritureComptableTest" time="0.004"/>
+  <testcase name="constructor3ParamsTest" classname="com.dummy.myerp.model.bean.comptabilite.SequenceEcritureComptableTest" time="0.002"/>
+  <testcase name="constructor2AParamsTest" classname="com.dummy.myerp.model.bean.comptabilite.SequenceEcritureComptableTest" time="0.001"/>
+  <testcase name="toStringTest" classname="com.dummy.myerp.model.bean.comptabilite.SequenceEcritureComptableTest" time="0.002"/>
 </testsuite>

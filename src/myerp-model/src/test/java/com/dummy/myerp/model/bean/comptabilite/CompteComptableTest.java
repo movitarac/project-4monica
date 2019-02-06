@@ -18,7 +18,7 @@ public class CompteComptableTest {
     @Test
     void getByNumeroTest() {
         vCompte = new CompteComptable();
-        vCompte.setNumero(156);
+        vCompte.setNumero(150);
         vCompte.setLibelle("Mr test");
         compteList = new ArrayList<>();
         compteList.add(vCompte);
