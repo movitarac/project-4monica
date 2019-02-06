@@ -52,7 +52,7 @@ public class CompteComptable {
         libelle = pLibelle;
     }
 
-
+    
     // ==================== Getters/Setters ====================
     public Integer getNumero() {
         return numero;
