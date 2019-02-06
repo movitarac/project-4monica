@@ -30,6 +30,7 @@ public class LigneEcritureComptable {
     private BigDecimal credit;
 
 
+    
     // ==================== Constructeurs ====================
     /**
      * Instantiates a new Ligne ecriture comptable.
