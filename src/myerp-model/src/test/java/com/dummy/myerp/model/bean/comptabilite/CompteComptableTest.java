@@ -23,7 +23,7 @@ public class CompteComptableTest {
         compteList = new ArrayList<>();
         compteList.add(vCompte);
         compteList.add(new CompteComptable(120,"Client"));
-        assertEquals(CompteComptable.getByNumero(compteList,156),vCompte);
+       assertEquals(CompteComptable.getByNumero(compteList,156),vCompte);
 
     }
 

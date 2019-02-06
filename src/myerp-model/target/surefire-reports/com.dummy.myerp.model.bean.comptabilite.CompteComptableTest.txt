@@ -1,8 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.dummy.myerp.model.bean.comptabilite.CompteComptableTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.065 sec <<< FAILURE! - in com.dummy.myerp.model.bean.comptabilite.CompteComptableTest
-getByNumeroTest  Time elapsed: 0.063 sec  <<< FAILURE!
-org.opentest4j.AssertionFailedError: expected: <null> but was: <CompteComptable{numero=150, libelle='Mr test'}>
-	at com.dummy.myerp.model.bean.comptabilite.CompteComptableTest.getByNumeroTest(CompteComptableTest.java:26)
-
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec - in com.dummy.myerp.model.bean.comptabilite.CompteComptableTest

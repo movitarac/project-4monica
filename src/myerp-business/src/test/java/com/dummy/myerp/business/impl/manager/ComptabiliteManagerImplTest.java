@@ -32,13 +32,13 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
 
 
     @Test
-    public void addReferenceTestUpdate() throws Exception {
+    public void addReferenceTest() throws Exception {
         vEcritureComptable.setId(-5);
         vEcritureComptable.setJournal(new JournalComptable("BQ", "Banque"));
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        vEcritureComptable.setDate(sdf.parse("2016-12-27 00:00:00"));
+        vEcritureComptable.setDate(sdf.parse("2016-02-05 00:00:00"));
         vEcritureComptable.setLibelle("Paiement Facture C110002");
 
 
@@ -52,6 +52,8 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         assertNotNull(vEcritureComptable.getReference());
 
     }
+
+
     @Test
     public void addReferenceTestInsert() throws Exception {
         vEcritureComptable.setId(-5);
@@ -231,6 +233,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
                 new BigDecimal(24)));
 
         manager.insertEcritureComptable(vEcritureComptable);
+        assertEquals("Libelle to insert",vEcritureComptable.getLibelle());
 
 
     }
@@ -252,6 +255,7 @@ public class ComptabiliteManagerImplTest extends BusinessTestCase {
         manager.insertEcritureComptable(vEcritureComptable);
         vEcritureComptable.setLibelle("libelle for update");
         manager.updateEcritureComptable(vEcritureComptable);
+        assertEquals("libelle for update", vEcritureComptable.getLibelle());
 
     }
 
