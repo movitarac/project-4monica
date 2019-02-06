@@ -17,4 +17,31 @@ class SequenceEcritureComptableTest {
         assertEquals(vSequence.toString(),realToString);
     }
 
+    @Test
+    public void constructor3ParamsTest(){
+        SequenceEcritureComptable vSequence1 = new SequenceEcritureComptable("AC",2019,60);
+        SequenceEcritureComptable vSequence2 = new SequenceEcritureComptable("AC",2019,60);
+
+
+        assertEquals(vSequence1.getAnnee(),vSequence2.getAnnee());
+
+    }
+    @Test
+    public void constructor2AParamsTest(){
+        SequenceEcritureComptable vSequence1 = new SequenceEcritureComptable(2019,60);
+        SequenceEcritureComptable vSequence2 = new SequenceEcritureComptable(2019,60);
+
+
+        assertEquals(vSequence1.getDerniereValeur(),vSequence2.getDerniereValeur());
+
+    }
+    @Test
+    public void constructor2BParamsTest(){
+        SequenceEcritureComptable vSequence1 = new SequenceEcritureComptable("BQ",2019);
+        SequenceEcritureComptable vSequence2 = new SequenceEcritureComptable("BQ",2019);
+
+
+        assertEquals(vSequence1.getJournalCode(),vSequence2.getJournalCode());
+
+    }
 }
