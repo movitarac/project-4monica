@@ -1,5 +1,5 @@
 #surefire
-#Fri Feb 08 16:47:13 CET 2019
+#Fri Feb 08 17:43:11 CET 2019
 perCoreThreadCount=true
 tc.1=com.dummy.myerp.testbusiness.business.BusinessTestCase
 paralleltimeoutforced=0.0

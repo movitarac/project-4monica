@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest
 -------------------------------------------------------------------------------
-Tests run: 16, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 7.012 sec <<< FAILURE! - in com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest
-insertEcritureComptableTestV  Time elapsed: 0.073 sec  <<< ERROR!
+Tests run: 16, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 10.645 sec <<< FAILURE! - in com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest
+insertEcritureComptableTestV  Time elapsed: 0.243 sec  <<< ERROR!
 com.dummy.myerp.technical.exception.FunctionalException: L'écriture comptable n'est pas équilibrée.
 	at com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest.insertEcritureComptableTestV(ComptabiliteManagerImplTest.java:235)
 

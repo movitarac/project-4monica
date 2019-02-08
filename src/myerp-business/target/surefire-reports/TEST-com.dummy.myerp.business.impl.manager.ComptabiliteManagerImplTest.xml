@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="7.012" tests="16" errors="1" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="10.645" tests="16" errors="1" skipped="0" failures="0">
   <properties>
     <property name="idea.version" value="2018.3.3"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -62,24 +62,24 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="updateSequenceEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.642"/>
-  <testcase name="deleteEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.046"/>
-  <testcase name="insertSequenceEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.411"/>
+  <testcase name="updateSequenceEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="1.603"/>
+  <testcase name="deleteEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.052"/>
+  <testcase name="insertSequenceEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.276"/>
   <testcase name="getListJournalComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.04"/>
-  <testcase name="checkEcritureComptableUnitRG3noLines" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.658"/>
-  <testcase name="checkEcritureComptableContextTestViolation" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.372"/>
-  <testcase name="checkEcritureComptableContextTestNoViolation" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.035"/>
-  <testcase name="addReferenceTestInsert" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.054"/>
+  <testcase name="checkEcritureComptableUnitRG3noLines" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.886"/>
+  <testcase name="checkEcritureComptableContextTestViolation" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.378"/>
+  <testcase name="checkEcritureComptableContextTestNoViolation" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.063"/>
+  <testcase name="addReferenceTestInsert" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.061"/>
   <testcase name="checkEcritureComptableUnitRG2" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.014"/>
-  <testcase name="checkEcritureComptableUnitRG5" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.055"/>
-  <testcase name="checkEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.028"/>
-  <testcase name="checkEcritureComptableUnit" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.021"/>
-  <testcase name="insertEcritureComptableTestV" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.073">
+  <testcase name="checkEcritureComptableUnitRG5" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.045"/>
+  <testcase name="checkEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.015"/>
+  <testcase name="checkEcritureComptableUnit" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.037"/>
+  <testcase name="insertEcritureComptableTestV" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.243">
     <error message="L&apos;écriture comptable n&apos;est pas équilibrée." type="com.dummy.myerp.technical.exception.FunctionalException">com.dummy.myerp.technical.exception.FunctionalException: L'écriture comptable n'est pas équilibrée.
 	at com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest.insertEcritureComptableTestV(ComptabiliteManagerImplTest.java:235)
 </error>
   </testcase>
-  <testcase name="updateEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.454"/>
-  <testcase name="addReferenceTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.085"/>
-  <testcase name="getListCompteComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.018"/>
+  <testcase name="updateEcritureComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.611"/>
+  <testcase name="addReferenceTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.149"/>
+  <testcase name="getListCompteComptableTest" classname="com.dummy.myerp.business.impl.manager.ComptabiliteManagerImplTest" time="0.02"/>
 </testsuite>
