@@ -49,7 +49,7 @@ public class EcritureComptableTest {
         vEcriture.getListLigneEcriture().add(this.createLigne(1, "20", "1"));
         vEcriture.getListLigneEcriture().add(this.createLigne(2, null, "30"));
         vEcriture.getListLigneEcriture().add(this.createLigne(2, "1", "2"));
-        assertFalse(vEcriture.isEquilibree(), vEcriture.toString());
+        assertFalse(vEcriture.toString(), vEcriture.isEquilibree());
     }
 
     @Test
